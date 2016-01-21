@@ -29,7 +29,6 @@ gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'kaminari'
-gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
 # Use ActiveModel has_secure_password
