@@ -5,6 +5,7 @@
   - email
   - solution_count
   - thumnail
+
 ### Problem
   - title
   - description
@@ -12,4 +13,4 @@
   - user_id
 
 ## Setting
-* rubyvertion 2.4.0-dev
+* rubyvertion 2.1.8
