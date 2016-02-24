@@ -42,4 +42,4 @@
   has_one [chat]
 
 ## Setting
-* ruby_vertion 2.1.8
+* ruby_vertion 2.2.4
