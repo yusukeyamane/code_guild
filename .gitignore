@@ -17,3 +17,9 @@
 /tmp
 
 db/schema.rb
+
+*.lock
+
+Gemfile.lock
+
+Gemfile.lock
