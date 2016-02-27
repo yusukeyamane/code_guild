@@ -1,45 +1,82 @@
-# Code_guild
 # DB DSEIGN
-
 ## Models
 ### Userモデル
-  - name
-  - email
-  - thumnail
-  - git_url
-  - programming_languages_of_interest
-  - programming_Eexperience
-  - company
-  - credits
+#### Asosiations
+    has_many [reviews, questions, lectures, chats]
+    has_many :contracts, foreign_key: :hostuser_id
+    has_many :contracts, foreign_key: :guestuser_id
 
-### Mentorモデル
-  - name
-  - email
-  - solution_count
-  - introduce
+#### Column
+- id
+- name
+- email
+- thumnail
+- introduce
+
+
+### Reviewモデル
+#### Asosiations
+    belongs_to [user, contract]
+
+#### Column
+- id
+- user_id
+- contract_id
+- rank
+- reason
+
 
 ### Questionモデル
-  - title
-  - description
-  - user_id
+#### Asosiations
+    belongs_to :user
+    has_one :contract, as: contractable
+
+#### Column
+- id
+- user_id
+- title
+- content
+- timelimit
+- reward
+
+### Lectureモデル
+#### Asosiations
+    belongs_to :user
+    has_one :contract, as: :contractable
+
+#### Column
+- id
+- user_id
+- title
+- content
+- avarable_time
+- charge
+
+### Contractモデル
+#### Asosiations
+    has_one :review
+    belongs_to :contractable, polymorphic: true
+    belongs_to [user]
+
+#### Column
+- id
+- contractable_id
+- contractable_type
+- hostuser_id
+- guestuser_id
+
 
 ### Chatモデル
-  - content
-  - user_id
-  - mentor_id
-  - question_id
+#### Asosiations
+    belongs_to [user, contract]
 
-## Asosiations
-#####User
-  has_many [questions, chats]
-#####Mentor
-  has_many [questions, chats]
-#####Question
-  belongs_to [users, mentors]
-  has_one [chat]
-#####Chat
-  has_many [users, mentors]
-  has_one [chat]
+#### Column
+- id
+- user_id
+- contract_id
+- text
+
+
 
 ## Setting
-* ruby_vertion 2.2.4
+* ruby_vertion 2.3.0
