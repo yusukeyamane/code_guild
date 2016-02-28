@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+        user:
+         name: ユーザー名
+         password: パスワード
+         password_confirmation: パスワード確認
+         email: メールアドレス
+    usual:
+      index: 一覧
+      detail: 詳細
+      new: 新規
+      edit: 編集
+      delete: 削除
+      add: 追加
+      update: 更新
+      signin: ログイン
+      signout: ログアウト
+    helpers:
+      submit:
+        create: 登録
+        update: 更新
+        submit: 保存
