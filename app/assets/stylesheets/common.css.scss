@@ -55,6 +55,13 @@ table {
   border-spacing: 0;
 }
 
+// clearfix
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .devise_links {
   padding: 0 0 20px 20px;
 }
