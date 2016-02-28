@@ -1,0 +1,14 @@
+// Place all the styles related to the lectures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lecture_posts{
+  background-color: #E4EDE8;
+  border-radius: 10px;
+  margin: 10px;
+
+  .lecture_post_username{
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
