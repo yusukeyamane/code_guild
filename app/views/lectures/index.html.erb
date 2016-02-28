@@ -1,1 +1,4 @@
+<% if user_signed_in? %>
+  <%= link_to "レクチャーを作成する", new_lecture_path %>
+<% end %>
 <%= render partial: :lecture, collection: @lectures %>
