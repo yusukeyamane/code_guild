@@ -19,3 +19,9 @@
 db/schema.rb
 app/assets/javascripts/lectures.coffee
 app/assets/stylesheets/lectures.scss
+
+*.lock
+
+Gemfile.lock
+
+Gemfile.lock
