@@ -1,0 +1,15 @@
+.header {
+  background-color: #F5F5F5;
+  width: 100%;
+    .headerwrap{
+      margin: 0 auto;
+    }
+    #logo {
+      font-size: 30px;
+      float: left;
+    }
+    .header_contents {
+      float: right;
+      padding: 10px;
+    }
+}
