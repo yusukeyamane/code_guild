@@ -17,6 +17,10 @@ class LecturesController < ApplicationController
     end
   end
 
+  def show
+    @lecture = Lecture.find(params[:id])
+  end
+
   private
   def lecture_params
     params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
