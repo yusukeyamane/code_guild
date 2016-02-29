@@ -1,4 +1,5 @@
 class LecturesController < ApplicationController
+  before_action :set_lecture, only: :show
 
   def index
     @lectures = Lecture.all
@@ -17,7 +18,14 @@ class LecturesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
+  def set_lecture
+    @lecture = Lecture.find(params[:id])
+  end
+
   def lecture_params
     params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
   end
