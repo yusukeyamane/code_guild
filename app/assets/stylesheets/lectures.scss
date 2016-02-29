@@ -2,12 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// index アクション
 .lecture_posts{
   background-color: #E4EDE8;
   border-radius: 10px;
   margin: 10px;
 
   .lecture_post_username{
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+
+
+// showアクション
+.lectures_show_contents{
+  margin: 10px;
+
+  .lectures_show_avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: gray;
+  }
+
+  .lectures_show_name{
     font-weight: bold;
     font-size: 24px;
   }
