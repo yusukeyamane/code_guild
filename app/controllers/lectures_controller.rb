@@ -1,5 +1,5 @@
 class LecturesController < ApplicationController
-  before_action :set_lecture, only: :show
+  before_action :set_lecture, only: [:show, :edit, :update]
 
   def index
     @lectures = Lecture.all
@@ -19,6 +19,17 @@ class LecturesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @lecture.update(lecture_params)
+      redirect_to :root, notice: "レクチャーを編集しました。"
+    else
+      render :edit
+    end
   end
 
   private
