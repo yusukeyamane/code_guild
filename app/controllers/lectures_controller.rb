@@ -9,12 +9,16 @@ class LecturesController < ApplicationController
   end
 
   def create
-    Lecture.create(lecture_params)
-    redirect_to :root
+    lecture = current_user.lectures.new(lecture_params)
+    if lecture.save
+      redirect_to :root, notice: "レクチャーを作成しました。"
+    else
+      render :new
+    end
   end
 
   private
   def lecture_params
-    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge).merge(user_id: current_user.id)
+    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
   end
 end
