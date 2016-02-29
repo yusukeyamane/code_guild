@@ -1,0 +1,14 @@
+<div class="questions_show_contents">
+  <% if @question.user.id == current_user.id %>
+    <%= link_to "編集", edit_question_path %>
+    <%= link_to "削除", question_path, method: :delete %>
+  <% end %>
+  <div class="questions_show_avatar"></div>
+  <div class="questions_show_name"><%=@question.user.name%></div>
+  <div class="questions_show_title"><%=@question.title%></div>
+  <div class="questions_show_content"><%=@question.content%></div>
+  <div class="questions_show_time_and_money">期限：<%=@question.timelimit%>　報酬：<%=@question.reward%></div>
+  <% unless @question.user.id == current_user.id %>
+    【この質問に応える】（イメージ）
+  <% end %>
+</div>
