@@ -12,8 +12,8 @@
             <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
           </ul>
        </li>
-      <li class="header_contents"><span>question</span></li>
-      <li class="header_contents"><span>lecture</span></li>
+      <li class="header_contents"><span><%= link_to "質問を見る", questions_path %></span></li>
+      <li class="header_contents"><span><%= link_to "レクチャーを見る", lectures_path %></span></li>
     </ul>
   </div>
   </header>
