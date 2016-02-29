@@ -1,6 +1,7 @@
 <div class="lectures_show_contents">
   <% if @lecture.user.id == current_user.id %>
     <%= link_to "編集", edit_lecture_path %>
+    <%= link_to "削除", lecture_path, method: :delete %>
   <% end %>
   <div class="lectures_show_avatar"></div>
   <div class="lectures_show_name"><%=@lecture.user.name%></div>
