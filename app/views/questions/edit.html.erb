@@ -1,0 +1,7 @@
+<%= form_for @question do |f| %>
+  タイトル：<%= f.text_field :title %></br>
+  内容：<%= f.text_field :content %></br>
+  返答期限：<%= f.text_field :timelimit %>　｜　
+  報酬：<%= f.text_field :reward %></br>円
+  <%= f.submit "この内容で質問を編集する"%>
+<% end %>
