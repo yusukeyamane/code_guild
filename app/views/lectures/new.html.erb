@@ -1,0 +1,7 @@
+<%= form_for @lecture do |f| %>
+  タイトル：<%= f.text_field :title, placeholder: "Railsでお悩みの方" %></br>
+  内容：<%= f.text_field :content, placeholder: "Rails教えますよ" %></br>
+  対応合計時間：<%= f.text_field :total_avarable_time, placeholder: "10" %>時間　｜　
+  料金：<%= f.text_field :charge, placeholder: "10,000" %></br>円
+  <%= f.submit "この内容でレクチャーを作成する"%>
+<% end %>
