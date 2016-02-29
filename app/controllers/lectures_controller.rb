@@ -1,5 +1,5 @@
 class LecturesController < ApplicationController
-  before_action :set_lecture, only: :show
+  before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
   def index
     @lectures = Lecture.all
@@ -12,13 +12,29 @@ class LecturesController < ApplicationController
   def create
     lecture = current_user.lectures.new(lecture_params)
     if lecture.save
-      redirect_to :root, notice: "レクチャーを作成しました。"
+      redirect_to :root, flash: { success: "レクチャーを作成しました。" }
     else
       render :new
     end
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @lecture.update(lecture_params)
+      redirect_to :root, flash: { success: "レクチャーを編集しました。" }
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @lecture.destroy
+    redirect_to :root, flash: { success: "レクチャーを削除しました。" }
   end
 
   private
