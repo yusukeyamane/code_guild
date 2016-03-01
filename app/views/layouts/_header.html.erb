@@ -4,6 +4,7 @@
     <h1 id="logo"><%= link_to "Lectgram", root_path %></h1>
       <ul class="dropdown">
         <li class="header_contents mypage">
+        <% if user_signed_in? %>
           <a class="dropdown-toggle" data-toggle="dropdown" href="">ここにアカウントの画像が入る</a>
             <ul class="dropdown-menu">
               <li><%= link_to 'マイページ', user_path(current_user) %></li>
@@ -12,8 +13,11 @@
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             </ul>
         </li>
-        <li class="header_contents"><span><%= link_to "質問", questions_path %></span></li>
-        <li class="header_contents"><span><%= link_to "レクチャー", lectures_path %></span></li>
+        <% else %>
+          <li class="header_contents"><%= link_to '新規登録', new_user_registration_path %></li>
+        <% end %>
+        <li class="header_contents"><span><%= link_to "質問を見る", questions_path %></span></li>
+        <li class="header_contents"><span><%= link_to "レクチャーを見る", lectures_path %></span></li>
         <li class="header_contents"><span><%= link_to "マイ契約", contracts_path %></span></li>
       </ul>
   </div>
