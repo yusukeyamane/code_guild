@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :contract]
 
   def index
     @questions = Question.all
@@ -36,6 +36,21 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to action: :index, flash: { success: "質問を削除しました。" }
+  end
+
+  def contract
+    if Contract.where(contractable_id: params[:id]).where(contractable_type: :Question).blank?
+      contract = Contract.new(contractable_id: params[:id], contractable_type: :Question, host_user_id: @question.user.id, guest_user_id: current_user.id)
+
+      if contract.save
+        redirect_to controller: :contracts, action: :index
+      else
+        render :show
+      end
+
+    else
+      redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
+    end
   end
 
   private
