@@ -1,0 +1,44 @@
+// contracts#index
+.contracts_index_contents{
+
+  .contracts_index_title{
+    font-weight: bold;
+    font-size: 32px;
+  }
+
+  .contracts_index_questions{
+    font-size: 28px;
+  }
+
+  .contracts_index_questions_hosts{
+    font-size: 20px;
+  }
+
+  .contracts_index_questions_guests{
+    font-size: 20px;
+  }
+
+  .contracts_index_lectures{
+    font-size: 28px;
+  }
+
+  .contracts_index_lectures_hosts{
+    font-size: 20px;
+  }
+
+  .contracts_index_lectures_guests{
+    font-size: 20px;
+  }
+
+  .contracts_index_nothing{
+    font-size: 16px;
+  }
+}
+
+// contracts/部分テンプレート
+._contract{
+  margin: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
