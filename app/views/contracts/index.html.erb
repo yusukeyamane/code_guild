@@ -1,0 +1,36 @@
+<div class="contracts_index_contents">
+  <div class="contracts_index_title">あなたのContract一覧</div>
+  <div class="contracts_index_questions">質問</div>
+  <div class="contracts_index_questions_hosts">host</div>
+
+  <% if @host_question_contracts.present? %>
+    <%= render partial: "host_question_contract", collection: @host_question_contracts %>
+  <% else %>
+    <div class="contracts_index_nothing">あなたが投稿した質問はありません。</div>
+  <% end %>
+
+  <div class="contracts_index_questions_guests">guest</div>
+  <% if @guest_question_contracts.present? %>
+    <%= render partial: "guest_question_contract", collection: @guest_question_contracts %>
+  <% else %>
+    <div class="contracts_index_nothing">あなたが対応した質問はありません。</div>
+  <% end %>
+
+
+  <div class="contracts_index_lectures">レクチャー</div>
+
+  <div class="contracts_index_lectures_hosts">host</div>
+  <% if @host_lecture_contracts.present? %>
+    <%= render partial: "host_lecture_contract", collection: @host_lecture_contracts %>
+  <% else %>
+    <div class="contracts_index_nothing">あなたが作成したレクチャーはありません。</div>
+  <% end %>
+
+  <div class="contracts_index_lectures_hosts">guest</div>
+  <% if @guest_lecture_contracts.present? %>
+    <%= render partial: "guest_lecture_contract", collection: @guest_lecture_contracts %>
+  <% else %>
+    <div class="contracts_index_nothing">あなたが申し込んだレクチャーはありません。</div>
+  <% end %>
+
+</div>
