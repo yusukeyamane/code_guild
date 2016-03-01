@@ -1,5 +1,5 @@
 class LecturesController < ApplicationController
-  before_action :set_lecture, only: [:show, :edit, :update, :destroy]
+  before_action :set_lecture, only: [:show, :edit, :update, :destroy, :contract]
 
   def index
     @lectures = Lecture.all
@@ -35,6 +35,22 @@ class LecturesController < ApplicationController
   def destroy
     @lecture.destroy
     redirect_to :root, flash: { success: "レクチャーを削除しました。" }
+  end
+
+  def contract
+    if Contract.where(contractable_id: params[:id]).where(contractable_type: :Lecture).blank?
+      contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id)
+
+      if contract.save
+        redirect_to controller: :contracts, action: :index
+      else
+        render :show
+      end
+
+    else
+      redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
+    end
+
   end
 
   private
