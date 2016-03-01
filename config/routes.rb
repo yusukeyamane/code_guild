@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   root to: "lectures#index"
   devise_for :users
-  resources :questions
   resources :users, only: [:show, :edit, :update]
-  resources :lectures, only: [:index, :new, :create, :show]
+  resources :questions do
+    member do
+      get :contract
+    end
+  end
+
+  resources :lectures do
+    member do
+      get :contract
+    end
+  end
+  resources :contracts, only: [:index]
 end
