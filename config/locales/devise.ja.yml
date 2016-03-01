@@ -26,6 +26,7 @@ ja:
 
   devise:
     failure:
+      not_found_in_database: "入力情報に一致するユーザーは存在しません"
       unauthenticated: 'ログインしてください。'
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: '本登録を行ってください。'
