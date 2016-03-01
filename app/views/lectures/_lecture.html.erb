@@ -1,7 +1,9 @@
-<div class="lecture_posts">
-  <span class="lecture_post_username"><%= lecture.user.name %></span></br>
-  <span class="lecture_post_title"><%= lecture.title %></span></br>
-  <span class="lecture_post_time_and_money">時間：<%= lecture.total_avarable_time %>h　｜　料金：<%= lecture.charge %>円</span></br>
-  <span class="lecture_post_content"><%= lecture.content %></span></br>
-  <%= link_to "このレクチャーを見る", lecture_path(lecture.id) %>
-</div>
+<% unless lecture.contract %>
+  <div class="lecture_posts">
+    <span class="lecture_post_username"><%= lecture.user.name %></span></br>
+    <span class="lecture_post_title"><%= lecture.title %></span></br>
+    <span class="lecture_post_time_and_money">時間：<%= lecture.total_avarable_time %>h　｜　料金：<%= lecture.charge %>円</span></br>
+    <span class="lecture_post_content"><%= lecture.content %></span></br>
+    <%= link_to "このレクチャーを見る", lecture_path(lecture.id) %>
+  </div>
+<% end %>
