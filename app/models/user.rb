@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lectures
   has_many :questions
+  has_many :contracts, foreign_key: :host_user_id
+  has_many :contracts, foreign_key: :guest_user_id
   mount_uploader :thumbnail, ThumbnailUploader
 end
