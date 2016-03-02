@@ -1,5 +1,5 @@
 <div class="lectures_show_contents">
-  <% if @lecture.user.id == current_user.id %>
+  <% if user_signed_in? && @lecture.user.id == current_user.id %>
     <%= link_to "編集", edit_lecture_path %>
     <%= link_to "削除", lecture_path, method: :delete %>
   <% end %>
@@ -7,8 +7,10 @@
   <div class="lectures_show_name"><%=@lecture.user.name%></div>
   <div class="lectures_show_title"><%=@lecture.title%></div>
   <div class="lectures_show_content"><%=@lecture.content%></div>
-  <div class="lectures_show_time_and_money">時間：<%=@lecture.total_avarable_time%>　料金：<%=@lecture.charge%></div>
-  <% unless @lecture.user.id == current_user.id %>
+  <div class="lectures_show_time_and_money">時間：<%=@lecture.total_avarable_time%>  料金：<%=@lecture.charge%></div>
+  <% if user_signed_in? && @lecture.user.id != current_user.id %>
+    <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture.id ) %>
+  <% else %>
     <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture.id ) %>
   <% end %>
 </div>
