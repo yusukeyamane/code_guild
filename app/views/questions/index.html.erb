@@ -1,4 +1,4 @@
 <% if user_signed_in? %>
   <%= link_to "質問を投稿する", new_question_path %>
 <% end %>
-<%= render partial: :question, collection: @questions %>
+<%= render @questions %>
