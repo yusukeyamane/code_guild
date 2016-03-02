@@ -1,5 +1,7 @@
 class LecturesController < ApplicationController
+
   before_action :set_lecture, only: [:show, :edit, :update, :destroy, :contract]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @lectures = Lecture.all
