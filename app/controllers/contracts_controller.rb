@@ -1,4 +1,7 @@
 class ContractsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @host_question_contracts = Contract.where(host_user_id: current_user.id, contractable_type: :question)
     @guest_question_contracts = Contract.where(guest_user_id: current_user.id, contractable_type: :question)
