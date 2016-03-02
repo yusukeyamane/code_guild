@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :lectures do
-    colection do
+    collection do
       resources :reviews, only: [:show, :create]
     end
     member do
