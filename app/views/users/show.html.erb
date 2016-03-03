@@ -2,6 +2,9 @@
 <%= image_tag @user.thumbnail %>
 <%= @user.introduce %>
 <%= @user.email %>
-<div class="btn btn-default">
-  <%= link_to 'Edit', edit_user_path %>
-</div>
+
+<% if current_user.id == @user.id %>
+  <div class="btn btn-default">
+    <%= link_to 'Edit', edit_user_path %>
+  </div>
+<% end %>
