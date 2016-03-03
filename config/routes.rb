@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   end
 
   resources :lectures do
-    collection do
-      resources :reviews, only: [:show, :create]
-    end
     member do
       get :contract
     end
   end
-  resources :contracts, only: [:index]
+
+  resources :contracts, only: [:index] do
+    resource :review
+  end
+
 end
