@@ -1,7 +1,13 @@
-<%= @user.name %>
-<%= image_tag @user.thumbnail %>
-<%= @user.introduce %>
-<%= @user.email %>
+<ul class="list-unstyled">
+  <li>名前  <%= @user.name %></li>
+  <li><%= image_tag @user.thumbnail %></li>
+  <li>紹介文  <%= @user.introduce %></li>
+  <li>メールアドレス  <%= @user.email %></li>
+</ul>
+
+<br />
+
+<%= render partial: 'users/review', collection: @reviews %>
 
 <% if current_user.id == @user.id %>
   <div class="btn btn-default">
