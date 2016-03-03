@@ -1,0 +1,16 @@
+<%= form_for [@contract, @review] do |f| %>
+  タイトル：<%= @contract.contractable.title %></br>
+  内容：<%= @contract.contractable.content %></br>
+  メンター名：<%= @contract.contractable.user.name %>
+  <div class="form-group">
+    <%= f.label :rate, '評価' %>
+    <%= f.number_field_tag :rate, 1, in: 1..10 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, 'レビュー内容', class: 'control-label col-sm-3 text-semibold text-default' %>
+    <%= f.text_area :content, class: 'form-control', placeholder: "教え方が圧倒的に分かりやすかったです" %>
+  </div>
+  <div class='text-center mb20 mt25 col-sm-12'>
+    <%= f.submit '評価を送信する', class: 'btn-type01 btn-top inquiry_submit' %>
+  </div>
+<% end %>
