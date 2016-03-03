@@ -2,4 +2,5 @@
   質問タイトル：<%= guest_question_contract.contractable.title %></br>
   質問投稿者：<%= guest_question_contract.contractable.user.name %></br>
   期限：<%= guest_question_contract.contractable.timelimit %></br>
+  <%= link_to 'この質問を評価する', new_contract_reviews_path(guest_question_contract) %>
 </div>
