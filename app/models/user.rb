@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :contracts, foreign_key: :host_user_id
   has_many :contracts, foreign_key: :guest_user_id
+  has_many :reviews
   mount_uploader :thumbnail, ThumbnailUploader
 end
