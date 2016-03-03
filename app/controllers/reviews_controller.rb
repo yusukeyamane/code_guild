@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to :root, flash: { success: "評価を投稿しました" }
     else
-      render :new, flash: { success: "評価が正しく投稿されませんでした" }
+      render action: :new, flash: { success: "評価が正しく投稿されませんでした" }
     end
   end
 
@@ -21,6 +21,11 @@ class ReviewsController < ApplicationController
 
 
   def update
+    if @review.update(review_params)
+      redirect_to user_path(current_user), flash: { success: "レビューを編集しました。" }
+    else
+      render action: :edit
+    end
   end
 
   private
