@@ -1,0 +1,7 @@
+<ul class="list-inline">
+  <li>評価：<%= review.rate %></li>
+  <li>内容：<%= review.content %></li>
+  <% if current_user.id == review.user_id %>
+    <li><%= link_to '評価内容を編集する', edit_review_path(review) %></li>
+  <% end %>
+</ul>

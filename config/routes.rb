@@ -13,5 +13,12 @@ Rails.application.routes.draw do
       get :contract
     end
   end
-  resources :contracts, only: [:index]
+
+  resources :contracts, only: [:index] do
+    resource :reviews, only: [:new, :create]
+    collection do
+      resources :reviews, only: [:edit, :update]
+    end
+  end
+
 end

@@ -1,8 +1,8 @@
 <% unless question.contract %>
   <div class="question_posts">
-    <span class="question_post_username"><%= question.user.name %></span></br>
+    <span class="question_post_username"><%= link_to "#{question.user.name}", user_path(question.user) %></span></br>
     <span class="question_post_title"><%= question.title %></span></br>
-    <span class="question_post_time_and_money">期限：<%= question.timelimit %>まで　｜　報酬：<%= question.reward %>円</span></br>
+    <span class="question_post_time_and_money">期限：<%= question.timelimit %>まで ｜ 報酬：<%= question.reward %>円</span></br>
     <span class="lecture_post_content"><%= question.content %></span></br>
     <%= link_to "この質問を見る", question_path(question.id) %>
   </div>
