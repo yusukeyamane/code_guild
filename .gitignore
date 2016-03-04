@@ -25,3 +25,5 @@ Gemfile.lock
 Gemfile.lock
 
 *.png
+
+config/pusher.yml
