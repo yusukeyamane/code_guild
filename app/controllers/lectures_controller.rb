@@ -44,6 +44,7 @@ class LecturesController < ApplicationController
       contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id)
 
       if contract.save
+        ContractMailer.lecure_contract_notificate_email(contract).deliver_now
         redirect_to controller: :contracts, action: :index
       else
         render :show
