@@ -44,6 +44,7 @@ class QuestionsController < ApplicationController
       contract = Contract.new(contractable_id: params[:id], contractable_type: :Question, host_user_id: @question.user.id, guest_user_id: current_user.id)
 
       if contract.save
+        ContractMailer.question_contract_notificate(contract).deliver_now
         redirect_to controller: :contracts, action: :index
       else
         render :show
