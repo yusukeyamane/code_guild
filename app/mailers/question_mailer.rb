@@ -1,2 +1,0 @@
-class QuestionMailer < ApplicationMailer
-end
