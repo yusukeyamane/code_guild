@@ -27,9 +27,9 @@ gem 'node'
 gem 'config'
 gem 'pusher'
 
-
 group :development, :test do
   gem 'byebug'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -41,4 +41,5 @@ group :development do
   gem 'spring'
   gem 'awesome_print'
   gem 'did_you_mean'
+  gem 'sidekiq', '~> 3.3.2'
 end
