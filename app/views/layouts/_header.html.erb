@@ -5,14 +5,15 @@
       <ul class="dropdown">
         <li class="header_contents mypage">
         <% if user_signed_in? %>
-          <a class="dropdown-toggle" data-toggle="dropdown" href="">ここにアカウントの画像が入る</a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'マイページ', user_path(current_user) %></li>
-              <li><span><%= link_to "マイ契約", contracts_path %></span></li>
-              <li><a href="#">設定</a></li>
-              <li><a href="#">よくある質問</a></li>
-              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-            </ul>
+          <%= link_to "", data: {toggle: 'dropdown'},class: "dropdown-toggle" do %>
+            <span><%= image_tag current_user.thumbnail_url(:thumb), style: "width: 50px;" %></span>
+          <% end %>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'マイページ', user_path(current_user) %></li>
+                <li><span><%= link_to "マイ契約", contracts_path %></span></li>
+                <li><a href="#">よくある質問</a></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              </ul>
         </li>
         <% else %>
           <li class="header_contents"><%= link_to '新規登録', new_user_registration_path %></li>
