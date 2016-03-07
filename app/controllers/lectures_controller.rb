@@ -62,6 +62,6 @@ class LecturesController < ApplicationController
   end
 
   def lecture_params
-    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
+    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge, :category_list)
   end
 end
