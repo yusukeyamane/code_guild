@@ -22,7 +22,7 @@ db/schema.rb
 
 Gemfile.lock
 
-*.png
+public/uploads
 
 config/settings.local.yml
 config/settings/*.local.yml
