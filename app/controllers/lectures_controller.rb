@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
 
-  before_action :set_lecture, only: [:show, :edit, :update, :destroy, :contract]
+  before_action :set_lecture, except: [:index, :new, :create, :purchase]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
@@ -53,7 +53,12 @@ class LecturesController < ApplicationController
     else
       redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
     end
+  end
 
+  def purchase
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    webpay.charge.create(currency: 'jpy', amount: @lecture.charge, card: params['webpay-token'])
+    redirect_to controller: :contracts, action: :index, flash: { success: "支払いが完了しました！" }
   end
 
   private

@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, only: [:show, :edit, :update, :destroy, :contract]
+  before_action :set_question, except: [:new, :create]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
