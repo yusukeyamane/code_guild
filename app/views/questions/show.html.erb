@@ -8,9 +8,14 @@
   <div class="questions_show_title"><%=@question.title%></div>
   <div class="questions_show_content"><%=@question.content%></div>
   <div class="questions_show_time_and_money">期限：<%=@question.timelimit%>  報酬：<%=@question.reward%></div>
-  <% if user_signed_in? && @question.user.id != current_user.id %>
-    <%= link_to "この質問に応える", contract_question_path(@question) %>
+  <% if user_signed_in? %>
+    <% if @question.user.id != current_user.id  %>
+      <%= link_to "この質問に答える", contract_question_path(@question) %>
+      <%= form_tag(action: :purchase, method: :post) do %>
+        <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+      <% end %>
+    <% end %>
   <% else %>
-    <%= link_to "この質問に応える", contract_question_path(@question) %>
+    <%= link_to "この質問に答える", contract_question_path(@question) %>
   <% end %>
 </div>
