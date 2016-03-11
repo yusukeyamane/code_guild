@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   resources :questions do
     member do
       get :contract
+      post :purchase
     end
   end
 
   resources :lectures do
     member do
       get :contract
+      post :purchase
     end
   end
 

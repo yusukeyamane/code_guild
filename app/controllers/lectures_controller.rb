@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
 
-  before_action :set_lecture, only: [:show, :edit, :update, :destroy, :contract]
+  before_action :set_lecture, except: [:index, :new, :create]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
@@ -44,7 +44,7 @@ class LecturesController < ApplicationController
       contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id)
 
       if contract.save
-        ContractMailer.lecure_contract_notificate_email(contract).deliver_now
+        ContractMailer.lecure_contract_notificate(contract).deliver_now
         redirect_to controller: :contracts, action: :index
       else
         render :show
@@ -53,7 +53,12 @@ class LecturesController < ApplicationController
     else
       redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
     end
+  end
 
+  def purchase
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    webpay.charge.create(currency: 'jpy', amount: @lecture.charge, card: params['webpay-token'])
+    redirect_to controller: :contracts, action: :index, flash: { success: "支払いが完了しました！" }
   end
 
   private
