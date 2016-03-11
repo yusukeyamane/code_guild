@@ -1,16 +1,17 @@
-<%= javascript_tag do %>
-  window.access_key = <%= raw @pusher_access_key.to_json %>;
-<% end %>
+<%= javascript_include_tag "https://js.pusher.com/3.0/pusher.min.js" %>
 
-<%= form_tag('chats', :remote => true) do %>
+
+<%= form_tag("/contracts/#{@contract.id}/chats", :remote => true) do %>
 <%= text_field_tag 'message' %>
 <%= submit_tag 'send' %>
 <% end %>
 
-<%= render partial: "message", collection: @chats %>
+<!-- ページ読み込み時点でDBに保存されていたメッセージを表示 -->
+<%= render partial: "chat", collection: @chats %>
+
+<!-- ページ読み込み後に更新されたメッセージをPusherによって以下のdivの中にリアルタイム表示 -->
 <div id='messagelog'></div>
 
-<script src="https://js.pusher.com/3.0/pusher.min.js"></script>
 
 <script type="text/javascript">
   Pusher.log = function(message) {
@@ -19,13 +20,19 @@
       }
     };
 
+  // 自分のアカウント認証
   var pusher = new Pusher("<%= @pusher_access_key %>");
+  // チャンネル指定
   var channel = pusher.subscribe('general_channel');
+
+  // 指定したイベントがPushされたときのコールバック（挙動）を記述
   channel.bind('chat_event', function(data) {
-  var messagelog = document.getElementById('messagelog');
-  var messagediv = document.createElement('div');
-  messagediv.innerHTML = data.message;
-  messagelog.appendChild(messagediv);
-});
+    if (<%= @contract.id %> == data.contract_id) {
+      var messagelog = document.getElementById('messagelog');
+      var messagediv = document.createElement('div');
+      messagediv.innerHTML = "- " + data.username + " -<br>" + data.message + "<br><br>";
+      messagelog.appendChild(messagediv);
+    }
+  });
 
 </script>
