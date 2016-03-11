@@ -9,8 +9,8 @@
   <div class="lectures_show_content"><%=@lecture.content%></div>
   <div class="lectures_show_time_and_money">時間：<%=@lecture.total_avarable_time%>  料金：<%=@lecture.charge%></div>
   <% if user_signed_in? && @lecture.user.id != current_user.id %>
-    <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture.id ) %>
+    <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture) %>
   <% else %>
-    <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture.id ) %>
+    <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture) %>
   <% end %>
 </div>

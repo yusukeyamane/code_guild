@@ -9,8 +9,8 @@
   <div class="questions_show_content"><%=@question.content%></div>
   <div class="questions_show_time_and_money">期限：<%=@question.timelimit%>  報酬：<%=@question.reward%></div>
   <% if user_signed_in? && @question.user.id != current_user.id %>
-    <%= link_to "この質問に応える", contract_question_path(@question ) %>
+    <%= link_to "この質問に応える", contract_question_path(@question) %>
   <% else %>
-    <%= link_to "この質問に応える", contract_question_path(@question ) %>
+    <%= link_to "この質問に応える", contract_question_path(@question) %>
   <% end %>
 </div>
