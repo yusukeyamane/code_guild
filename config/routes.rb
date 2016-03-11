@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :chat, only: [:index]
-  post 'post' => 'chat#post'
+  resources :chats, only: [:index, :create]
 
 end
