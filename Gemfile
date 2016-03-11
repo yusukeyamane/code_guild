@@ -26,7 +26,7 @@ gem 'libv8'
 gem 'node'
 gem 'config'
 gem 'pusher'
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'webpay'
 
 group :development, :test do
   gem 'byebug'
