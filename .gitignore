@@ -20,8 +20,6 @@ db/schema.rb
 
 *.lock
 
-Gemfile.lock
-
 public/uploads
 
 config/settings.local.yml
