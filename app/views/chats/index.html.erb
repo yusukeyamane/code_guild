@@ -1,0 +1,31 @@
+<%= javascript_tag do %>
+  window.access_key = <%= raw @pusher_access_key.to_json %>;
+<% end %>
+
+<%= form_tag('chats', :remote => true) do %>
+<%= text_field_tag 'message' %>
+<%= submit_tag 'send' %>
+<% end %>
+
+<%= render partial: "message", collection: @chats %>
+<div id='messagelog'></div>
+
+<script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+
+<script type="text/javascript">
+  Pusher.log = function(message) {
+    if (window.console && window.console.log) {
+      window.console.log(message);
+      }
+    };
+
+  var pusher = new Pusher("<%= @pusher_access_key %>");
+  var channel = pusher.subscribe('general_channel');
+  channel.bind('chat_event', function(data) {
+  var messagelog = document.getElementById('messagelog');
+  var messagediv = document.createElement('div');
+  messagediv.innerHTML = data.message;
+  messagelog.appendChild(messagediv);
+});
+
+</script>
