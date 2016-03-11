@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, except: [:new, :create]
+  before_action :set_question, except: [:index, :new, :create]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
@@ -53,6 +53,12 @@ class QuestionsController < ApplicationController
     else
       redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
     end
+  end
+
+  def purchase
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    webpay.charge.create(currency: 'jpy', amount: @question.reward, card: params['webpay-token'])
+    redirect_to controller: :contracts, action: :index, flash: { success: "支払いが完了しました！" }
   end
 
   private

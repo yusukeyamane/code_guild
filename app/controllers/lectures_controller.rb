@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
 
-  before_action :set_lecture, except: [:index, :new, :create, :purchase]
+  before_action :set_lecture, except: [:index, :new, :create]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
