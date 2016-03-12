@@ -17,13 +17,12 @@ Rails.application.routes.draw do
   end
 
   resources :contracts, only: [:index] do
+    resources :chats, only: [:index, :create]
     resource :reviews, only: [:new, :create]
     collection do
       resources :reviews, only: [:edit, :update]
     end
   end
 
-  resources :chat, only: [:index]
-  post 'post' => 'chat#post'
 
 end

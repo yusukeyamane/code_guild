@@ -3,4 +3,5 @@
   受講者：<%= guest_lecture_contract.contractable.user.name %></br>
   契約時間：<%= guest_lecture_contract.contractable.total_avarable_time %></br>
   <%= link_to 'このレクチャーを評価する', new_contract_reviews_path(guest_lecture_contract) %>
+  <%= link_to "チャット", contract_chats_path(guest_lecture_contract.id) %></br>
 </div>
