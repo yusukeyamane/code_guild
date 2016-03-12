@@ -4,7 +4,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :user_id
       t.string :title
       t.text :content
-      t.datetime :timelimit
       t.integer :reward
       t.timestamps
     end

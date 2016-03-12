@@ -11,5 +11,4 @@ class User < ActiveRecord::Base
   has_many :chats
   mount_uploader :thumbnail, ThumbnailUploader
 
-  acts_as_ordered_taggable_on :skills
 end
