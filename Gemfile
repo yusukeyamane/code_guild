@@ -20,7 +20,6 @@ gem 'kaminari'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'bootstrap_form'
-gem 'acts-as-taggable-on', '~> 3.4'
 gem 'therubyracer', platforms: :ruby
 gem 'libv8'
 gem 'node'
