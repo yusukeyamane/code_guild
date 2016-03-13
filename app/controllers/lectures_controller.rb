@@ -16,6 +16,7 @@ class LecturesController < ApplicationController
     if lecture.save
       redirect_to :root, flash: { success: "レクチャーを作成しました。" }
     else
+      @lecture = current_user.lectures.new(lecture_params)
       render :new
     end
   end

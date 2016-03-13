@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
     if question.save
       redirect_to action: :index, flash: { success: "質問を投稿しました。" }
     else
+      @question = current_user.questions.new(question_params)
       render :new
     end
   end
