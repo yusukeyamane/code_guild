@@ -3,32 +3,20 @@
 <%= f.submit 'send' %>
 <% end %>
 
-<!-- ページ読み込み時点でDBに保存されていたメッセージを表示 -->
 <%= render partial: "chat", collection: @chats %>
 
-<!-- ページ読み込み後に更新されたメッセージをPusherによって以下のdivの中にリアルタイム表示 -->
 <div id='messagelog'></div>
 
-
 <script type="text/javascript">
-  Pusher.log = function(message) {
-    if (window.console && window.console.log) {
-      window.console.log(message);
-      }
-    };
-
-  // 自分のアカウント認証
   var pusher = new Pusher("<%= @pusher_access_key %>");
-  // チャンネル指定
   var channel = pusher.subscribe('general_channel');
-
-  // 指定したイベントがPushされたときのコールバック（挙動）を記述
   channel.bind('chat_event', function(data) {
     if (<%= @contract.id %> == data.contract_id) {
       var messagelog = document.getElementById('messagelog');
       var messagediv = document.createElement('div');
       messagediv.innerHTML = "- " + data.username + " -<br>" + data.message + "<br><br>";
       messagelog.appendChild(messagediv);
+      document.getElementById('chat_message').value = "";
     }
   });
 
