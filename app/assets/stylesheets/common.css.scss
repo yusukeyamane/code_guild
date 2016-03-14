@@ -69,3 +69,101 @@ table {
 .devise_links {
   padding: 0 0 20px 20px;
 }
+
+// lecture and question
+.title {
+  color: #D52B2F;
+  font-size: 30px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0px 0px 10px;
+}
+
+.basic_red {
+  color: #D52B2F;
+}
+
+.basic_pink {
+  color: #EAA09F;
+}
+
+.search_title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search_box {
+  width: 50%;
+}
+
+.box_list {
+  display:table;
+  border-collapse: separate;  /* ←ココで余白 */
+  border-spacing: 8px 0;  /* ←ココで余白 */
+  width: 100%;
+    .radius_box {
+      border-radius: 14px;
+      background-color: #D52B2F;
+      display: table-cell;
+      vertical-align: middle;
+      height: 25px;
+      text-align: center;
+        span {
+          color: #FFF;
+          display: block-inline;
+        }
+  }
+}
+
+.card_box {
+  background-color: #EAA09F;
+  padding-bottom: 20px;
+    .user_area {
+        padding: 10px 0 10px;
+        width: 80%;
+        margin: 0 auto;
+        .user_avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin-right: 8px;
+          }
+        .user_name a{
+            font-size: 20px;
+            color: #FFF;
+            text-decoration: none;
+            vertical-align: top;
+          }
+      }
+    .card_content {
+        width: 80%;
+        height: 70%;
+        background-color: #FFF;
+        padding: 10px;
+        margin: 0 auto;
+      h1 {
+          color: #D52B2F;
+          font-size: 20px;
+          font-weight: bold;
+      }
+      h2 {
+          font-size: 12px;
+      }
+      p {
+          color: #EAA09F;
+          font-weight: bold;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
