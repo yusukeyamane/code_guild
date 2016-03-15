@@ -1,7 +1,7 @@
 <%= form_for @lecture do |f| %>
   タイトル：<%= f.text_field :title %></br>
   内容：<%= f.text_field :content %></br>
-  対応合計時間：<%= f.text_field :total_avarable_time %>時間　｜　
+  対応合計時間：<%= f.text_field :total_avarable_time %>時間｜
   料金：<%= f.text_field :charge %></br>円
   <%= f.submit "この内容でレクチャーを編集する"%>
 <% end %>
