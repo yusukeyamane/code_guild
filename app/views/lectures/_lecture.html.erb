@@ -7,7 +7,14 @@
             <li>
               <%= link_to "#{lecture.user.name}", user_path(lecture.user), class: "user_name" %>
             </li>
-            <li><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "125/25" %></li>
+            <li>
+              <ul class="user_detail">
+                <li class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "100/20" %>
+                </li>
+                <li class="rate"><span>13</span></li>
+                <li class="skill"><span>R</span></li>
+              </ul>
+            </li>
           </ul>
         </div>
           <div class="card_content">
