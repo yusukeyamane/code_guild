@@ -1,9 +1,39 @@
 <% unless lecture.contract %>
-  <div class="lecture_posts">
-    <span class="lecture_post_username"><%= link_to "#{lecture.user.name}", user_path(lecture.user) %></span></br>
-    <span class="lecture_post_title"><%= lecture.title %></span></br>
-    <span class="lecture_post_time_and_money">時間：<%= lecture.total_avarable_time %>h ｜ 料金：<%= lecture.charge %>円</span></br>
-    <span class="lecture_post_content"><%= lecture.content %></span></br>
-    <%= link_to "このレクチャーを見る", lecture_path(lecture.id) %>
-  </div>
+    <div class="col-md-4">
+      <div class="card_box">
+        <div class="user_area clearfix">
+            <%= image_tag lecture.user.thumbnail.url, class: "user_avatar" %>
+          <ul>
+            <li>
+              <%= link_to "#{lecture.user.name}", user_path(lecture.user), class: "user_name" %>
+            </li>
+            <li>
+              <ul class="user_detail">
+                <li class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "100/20" %>
+                </li>
+                <li class="rate"><span>13</span></li>
+                <li class="skill"><span>R</span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+          <div class="card_content">
+            <h1><%= lecture.title %></h1><br>
+            <ul class="box_list">
+              <li class="radius_box">
+                <span>時間：<%= lecture.total_avarable_time %>h </span>
+              </li>
+              <li class="radius_box">
+                <span><%= lecture.charge %>円</span>
+              </li>
+            </ul><br>
+            <p>対応方法 : Skype, チャット</p><br>
+            <span><%= lecture.content %></span>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<% if false %>
+<%= link_to "このレクチャーを見る", lecture_path(lecture.id) %>
 <% end %>

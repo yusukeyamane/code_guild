@@ -69,3 +69,141 @@ table {
 .devise_links {
   padding: 0 0 20px 20px;
 }
+
+.card_wrapper {
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+// lecture and question
+.title {
+  color: #D52B2F;
+  font-size: 30px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0px 0px 10px;
+}
+
+.basic_red {
+  color: #D52B2F;
+}
+
+.basic_pink {
+  color: #EAA09F;
+}
+
+.search_title {
+  font-size: 14px;
+  text-align: center;
+}
+
+.search_box {
+  width: 50%;
+}
+
+
+.card_box {
+  background-color: #EAA09F;
+  padding-bottom: 20px;
+  margin-top: 20px;
+    .user_area {
+        padding: 10px 0 10px;
+        width: 90%;
+        margin: 0 auto;
+        ul {
+          padding-top: 4px;
+          li {
+            padding-bottom: 6px;
+            .user_detail {
+              float: right;
+              width: -webkit-calc(100% - 72px);
+                  .star {
+                    float: left;
+                    display: inline;
+                    vertical-align: middle;
+                  }
+                  .rate {
+                    color: #FFF;
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 3px;
+                  }
+                  .skill {
+                    background-color: gray;
+                    border-radius: 50%;
+                    width: 15px;
+                    display: inline;
+                    vertical-align: middle;
+                    float: right;
+                }
+              }
+            }
+          }
+        .user_avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin-right: 8px;
+            float: left;
+          }
+        .user_name {
+            font-size: 20px;
+            color: #FFF;
+            text-decoration: none;
+            vertical-align: top;
+            padding-left: 6px;
+          }
+      }
+    .card_content {
+        width: 90%;
+        height: 70%;
+        background-color: #FFF;
+        padding: 10px;
+        margin: 0 auto;
+      h1 {
+          color: #D52B2F;
+          font-size: 20px;
+          font-weight: bold;
+      }
+      h2 {
+          font-size: 12px;
+      }
+      p {
+          color: #EAA09F;
+          font-weight: bold;
+      }
+    }
+  }
+
+.box_list {
+  display:table;
+  border-collapse: separate;
+  border-spacing: 8px 0;
+  width: 100%;
+  margin-bottom: 10px;
+  content: "";
+  margin-bottom: 10px;
+  // float: right;
+    .radius_box {
+      border-radius: 14px;
+      background-color: #D52B2F;
+      display: table-cell;
+      vertical-align: middle;
+      height: 25px;
+      text-align: center;
+        span {
+          color: #FFF;
+          display: block-inline;
+        }
+  }
+}
+
+
+
+
+
+
+
+
+
+

@@ -12,11 +12,10 @@ class LecturesController < ApplicationController
   end
 
   def create
-    lecture = current_user.lectures.new(lecture_params)
-    if lecture.save
+    @lecture = current_user.lectures.new(lecture_params)
+    if @lecture.save
       redirect_to :root, flash: { success: "レクチャーを作成しました。" }
     else
-      @lecture = current_user.lectures.new(lecture_params)
       render :new
     end
   end
