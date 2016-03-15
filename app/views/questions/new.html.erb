@@ -1,7 +1,6 @@
 <%= form_for @question do |f| %>
   タイトル：<%= f.text_field :title, placeholder: "Railsで悩んでます" %></br>
   内容：<%= f.text_field :content, placeholder: "Rails教えてください" %></br>
-  返答期限：<%= f.text_field :timelimit, placeholder: "2016-03-31 22:05:30" %>　｜　
   報酬：<%= f.text_field :reward, placeholder: "1,000" %></br>円
   <%= f.submit "この内容で質問を作成する"%>
 <% end %>

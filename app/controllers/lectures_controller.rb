@@ -12,8 +12,8 @@ class LecturesController < ApplicationController
   end
 
   def create
-    lecture = current_user.lectures.new(lecture_params)
-    if lecture.save
+    @lecture = current_user.lectures.new(lecture_params)
+    if @lecture.save
       redirect_to :root, flash: { success: "レクチャーを作成しました。" }
     else
       render :new
@@ -67,6 +67,6 @@ class LecturesController < ApplicationController
   end
 
   def lecture_params
-    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge, :category_list)
+    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
   end
 end

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :contracts, foreign_key: :guest_user_id
   has_many :reviews
   has_many :chats
+  has_many :skill_relations, as: :skill_relationable
   mount_uploader :thumbnail, ThumbnailUploader
 
-  acts_as_ordered_taggable_on :skills
 end

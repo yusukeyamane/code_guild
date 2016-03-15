@@ -12,8 +12,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = current_user.questions.new(question_params)
-    if question.save
+    @question = current_user.questions.new(question_params)
+    if @question.save
       redirect_to action: :index, flash: { success: "質問を投稿しました。" }
     else
       render :new

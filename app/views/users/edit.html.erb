@@ -21,10 +21,6 @@
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :skill_list, 'スキル・特技(カンマ区切り)' %>
-        <%= f.text_field_tag 'user[skill_list]', @user.skill_list.join(','), class: "form-control" %>
-      </div>
-      <div class="form-group">
         <%= f.label '自己紹介' %>
         <%= f.text_area :introduce, class: "form-control" %>
       </div>

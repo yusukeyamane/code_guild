@@ -5,6 +5,7 @@
     has_many [reviews, questions, lectures, chats]
     has_many :contracts, foreign_key: :hostuser_id
     has_many :contracts, foreign_key: :guestuser_id
+    has_many :skill_relations, as: :skill_relationable
 
 #### Column
 - id
@@ -30,6 +31,7 @@
 #### Asosiations
     belongs_to :user
     has_one :contract, as: contractable
+    has_many :skill_relations, as: :skill_relationable
 
 #### Column
 - id
@@ -43,6 +45,7 @@
 #### Asosiations
     belongs_to :user
     has_one :contract, as: :contractable
+    has_many :skill_relations, as: :skill_relationable
 
 #### Column
 - id
@@ -74,7 +77,29 @@
 - id
 - user_id
 - contract_id
-- text
+- message
+
+
+### Skillモデル
+#### Asosiations
+    has_many :skill_relations
+
+#### Column
+- id
+- skill
+
+
+### Skill_relationモデル
+#### Asosiations
+    belongs_to :skill
+    belongs_to :skill_relationable, polymorphic: true
+
+#### Column
+- id
+- skill_id
+- skill_relationable_id
+- skill_relationable_type
+
 
 
 
