@@ -67,9 +67,9 @@
       }
 
       #question_nav_menu{
-        position: relative;
-        top: -15px;
-        right: 130px;
+        position: absolute;
+        top: 40px;
+        right: 40%;
         width: 300px;
         height: 50px;
         margin: 0 auto;
@@ -100,9 +100,9 @@
       }
 
       #lecture_nav_menu{
-        position: relative;
-        top: -15px;
-        left: -120px;
+        position: absolute;
+        top: 40px;
+        left: 40%;
         width: 380px;
         height: 50px;
         margin: 0 auto;
@@ -137,16 +137,15 @@
       #avatar_nav{
         position: relative;
         top: 4px;
-
         width: 30px;
         height: 30px;
         border-radius: 100%;
       }
 
       #avatar_nav_menu{
-        position: relative;
-        top: -15px;
-        right: -30px;
+        position: absolute;
+        top: 40px;
+        right: 0px;
         padding: 10px;
         width: 150px;
         height: 140px;
