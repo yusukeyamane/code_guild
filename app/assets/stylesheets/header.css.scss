@@ -1,15 +1,180 @@
 .header {
-  background-color: #F5F5F5;
-  width: 100%;
-    .headerwrap{
-      margin: 0 auto;
+  position: relative;
+  height: 40px;
+  background-color: #D52B2F;
+  font-family: HiraKakuProN-W3;
+
+
+  #hedder_navbar{
+    color: #fff;
+    line-height: 39px;
+
+    a{
+      color: #fff;
+
+      &:hover{
+        opacity: 0.9;
+      }
     }
-    #logo {
-      font-size: 30px;
-      float: left;
+
+
+    .fade_area{
+      display: none;
+      position: relative;
+      z-index: 10;
     }
-    .header_contents {
-      float: right;
-      padding: 10px;
+
+
+    #navbar_left{
+
+      #header_logo{
+        margin-left: 40px;
+        font-size: 21px;
+      }
     }
-}
+
+    #navbar_center{
+      text-align: center;
+
+      #centering_question_lecture_nav{
+        width: 208px;
+        margin: 0 auto;
+      }
+
+      #question_nav{
+        margin-right: 30px;
+      }
+
+      a{
+        color: #4A4A4A;
+      }
+
+
+      .question_fade_trigger{
+        width: 5rem;
+        float: left;
+
+        &:before{
+          content: "";
+          position: relative;
+          top: 10px;
+          left: 56px;
+          height: 0;
+          width: 0;
+          border: solid 5px transparent;
+          border-top-color: #fff;
+        }
+      }
+
+      #question_nav_menu{
+        position: relative;
+        top: -15px;
+        right: 130px;
+        width: 300px;
+        height: 50px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9);
+        line-height: 50px;
+        text-align: center;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+      }
+
+      .lecture_fade_trigger{
+        width: 8rem;
+        float: left;
+
+        &:before{
+          content: "";
+          position: relative;
+          top: 10px;
+          left: 135px;
+          height: 0;
+          width: 0;
+          border: solid 5px transparent;
+          border-top-color: #fff;
+        }
+      }
+
+      #lecture_nav{
+        margin-left: 30px;
+      }
+
+      #lecture_nav_menu{
+        position: relative;
+        top: -15px;
+        left: -120px;
+        width: 380px;
+        height: 50px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9);
+        line-height: 50px;
+        text-align: center;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+      }
+    }// navbar_center
+
+
+
+
+    #navbar_right{
+      position: relative;
+      right: 30px;
+      text-align: right;
+
+
+      #contract_nav{
+        position: relative;
+        top: 2px;
+        right: 25px;
+      }
+
+      #chat_nav{
+        position: relative;
+        top: 2px;
+        right: 15px;
+      }
+
+      #avatar_nav{
+        position: relative;
+        top: 4px;
+
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+      }
+
+      #avatar_nav_menu{
+        position: relative;
+        top: -15px;
+        right: -30px;
+        padding: 10px;
+        width: 150px;
+        height: 140px;
+        background: rgba(255, 255, 255, 0.9);
+        list-style: none;
+        line-height: 35px;
+        float: right;
+        text-align: center;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+
+        a{
+          color: #4A4A4A;
+        }
+      }
+
+      .avatar_fade_trigger{
+        width: 2rem;
+        float: right;
+      }
+
+
+    }//navbar_right
+
+  }//header_navbar
+
+
+
+
+
+
+} // header
