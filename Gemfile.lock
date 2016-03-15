@@ -38,9 +38,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.1)
-      execjs
-      json
     awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -49,10 +46,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
-    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (8.2.2)
     carrierwave (0.10.0)
@@ -85,7 +78,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    commonjs (0.2.7)
     concurrent-ruby (1.0.0)
     config (1.0.0)
       activesupport (>= 3.0)
@@ -100,7 +92,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-bootstrap-views (0.0.7)
     did_you_mean (1.0.0)
     erb2haml (0.1.5)
       html2haml
@@ -143,13 +134,6 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    less (2.6.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.7.1)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
     letter_opener (1.4.1)
       launchy (~> 2.2)
     libv8 (3.16.14.13)
@@ -256,11 +240,6 @@ GEM
       hitimes
     turbolinks (2.5.3)
       coffee-rails
-    twitter-bootstrap-rails (3.2.2)
-      actionpack (>= 3.1)
-      execjs (>= 2.2.2, >= 2.2)
-      less-rails (>= 2.5.0)
-      railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -283,14 +262,11 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
-  bootstrap-sass
-  bootstrap_form
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
   config
   devise
-  devise-bootstrap-views
   did_you_mean
   erb2haml
   haml-rails
@@ -313,7 +289,6 @@ DEPENDENCIES
   spring
   therubyracer
   turbolinks
-  twitter-bootstrap-rails
   uglifier
   web-console (~> 2.0)
   webpay

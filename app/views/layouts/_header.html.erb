@@ -1,27 +1,78 @@
 <% unless params[:controller].include?("devise") %>
   <header class="header">
-  <div class="headerwrap container clearfix">
-    <h1 id="logo"><%= link_to "Lectgram", root_path %></h1>
-      <ul class="dropdown">
-        <li class="header_contents mypage">
+
+    <div id="hedder_navbar">
+      <div class="row">
+
+        <div class="col-xs-2" id="navbar_left">
+          <%= link_to "Lectgram", root_path, id: "header_logo" %>
+        </div>
+
+        <div class="col-xs-8" id="navbar_center">
+
+          <div id="centering_question_lecture_nav">
+
+            <div class="fade_trigger question_fade_trigger">
+              <span id="question_nav">質問</span>
+              <div class="fade_area" id="question_nav_menu">
+                <%= link_to "質問を作る　", new_question_path %>
+                <%= link_to "　質問を見る", questions_path %>
+              </div>
+            </div>
+
+            <div class="fade_trigger lecture_fade_trigger">
+              <span id="lecture_nav">レクチャー</span>
+              <div class="fade_area" id="lecture_nav_menu">
+                <%= link_to "レクチャーを作る　", new_lecture_path %>
+                <%= link_to "　レクチャーを見る", lectures_path %>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
         <% if user_signed_in? %>
-          <%= link_to "", data: {toggle: 'dropdown'},class: "dropdown-toggle" do %>
-            <span><%= image_tag current_user.thumbnail_url(:thumb), style: "width: 50px;" %></span>
-          <% end %>
-              <ul class="dropdown-menu">
-                <li><%= link_to 'マイページ', user_path(current_user) %></li>
-                <li><span><%= link_to "マイ契約", contracts_path %></span></li>
-                <li><a href="#">よくある質問</a></li>
-                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-              </ul>
-        </li>
-        <% else %>
-          <li class="header_contents"><%= link_to '新規登録', new_user_registration_path %></li>
-          <li class="header_contents"><%= link_to 'ログイン', new_user_session_path %></li>
+          <div class="col-xs-2" id="navbar_right">
+            <%= link_to "", contracts_path, class: "glyphicon glyphicon-list-alt", id: "contract_nav" %>
+            <%= link_to "", contract_chats_path(current_user.id), class: "glyphicon glyphicon-comment", id: "chat_nav" %>
+            <!-- 一旦contract_chats_pathの引数をcurrent_user.idにしてエラーを防ぐ -->
+
+            <div class="fade_trigger avatar_fade_trigger">
+              <img src="<%= current_user.avatar %>" id="avatar_nav">
+
+              <div class="fade_area" id="avatar_nav_menu">
+                <ul>
+                  <li><%= link_to current_user.name, user_path(current_user.id) %></li>
+                  <li><%= link_to "設定", root_path %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
         <% end %>
-        <li class="header_contents"><span><%= link_to "質問を見る", questions_path %></span></li>
-        <li class="header_contents"><span><%= link_to "レクチャーを見る", lectures_path %></span></li>
-      </ul>
-  </div>
+
+      </div><!-- .row -->
+    </div><!-- #header_navbar -->
+
+
+    <div id="hidden_nav_menu">
+      <div class="row">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8" id="hidden_nav_menu_center">
+          <div class="question_fade_trigger">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div id="contract_nav_menu"></div>
+          <div id="chat_nav_menu"></div>
+          <div id="avatar_fade_trigger">
+          </div>
+        </div>
+      </div> <!-- row -->
+    </div> <!-- #hidden_nav_menu -->
+
   </header>
 <% end %>
