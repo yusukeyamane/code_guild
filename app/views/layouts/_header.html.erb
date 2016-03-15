@@ -1,5 +1,5 @@
 <% unless params[:controller].include?("devise") %>
-  <header class="header">
+  <header class="header clearfix">
 
     <div id="hedder_navbar">
       <div class="row">
@@ -13,18 +13,30 @@
           <div id="centering_question_lecture_nav">
 
             <div class="fade_trigger question_fade_trigger">
-              <span id="question_nav">質問</span>
+              <p id="question_nav">質問</p>
               <div class="fade_area" id="question_nav_menu">
-                <%= link_to "質問を作る", new_question_path %>
-                <%= link_to "質問を見る", questions_path %>
+              <ul>
+                <li>
+                  <%= link_to "新規作成", new_question_path %>
+                </li>
+                <li>
+                  <%= link_to "一覧を表示", questions_path, class: "cover_shadow" %>
+                </li>
+              </ul>
               </div>
             </div>
 
             <div class="fade_trigger lecture_fade_trigger">
               <span id="lecture_nav">レクチャー</span>
               <div class="fade_area" id="lecture_nav_menu">
-                <%= link_to "レクチャーを作る", new_lecture_path %>
-                <%= link_to "レクチャーを見る", lectures_path %>
+              <ul>
+                <li>
+                  <%= link_to "新規作成", new_lecture_path, class: "cover_shadow" %>
+                </li>
+                <li>
+                  <%= link_to "一覧表示", lectures_path, class: "cover_shadow" %>
+                </li>
+              </ul>
               </div>
             </div>
 
@@ -43,9 +55,9 @@
 
               <div class="fade_area" id="avatar_nav_menu">
                 <ul>
-                  <li><%= link_to current_user.name, user_path(current_user.id) %></li>
-                  <li><%= link_to "設定", root_path %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to current_user.name, user_path(current_user.id), class: "cover_shadow" %></li>
+                  <li><%= link_to "設定", root_path, class: "cover_shadow" %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "cover_shadow" %></li>
                 </ul>
               </div>
             </div>
