@@ -70,6 +70,11 @@ table {
   padding: 0 0 20px 20px;
 }
 
+.card_wrapper {
+  margin-bottom: 20px;
+  height: 100%;
+}
+
 // lecture and question
 .title {
   color: #D52B2F;
@@ -90,50 +95,41 @@ table {
 .search_title {
   font-size: 14px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .search_box {
   width: 50%;
 }
 
-.box_list {
-  display:table;
-  border-collapse: separate;  /* ←ココで余白 */
-  border-spacing: 8px 0;  /* ←ココで余白 */
-  width: 100%;
-    .radius_box {
-      border-radius: 14px;
-      background-color: #D52B2F;
-      display: table-cell;
-      vertical-align: middle;
-      height: 25px;
-      text-align: center;
-        span {
-          color: #FFF;
-          display: block-inline;
-        }
-  }
-}
 
 .card_box {
   background-color: #EAA09F;
   padding-bottom: 20px;
+  margin-top: 20px;
     .user_area {
         padding: 10px 0 10px;
         width: 80%;
         margin: 0 auto;
+        ul {
+          float: left;
+          margin-top : 5px;
+          li {
+            padding-bottom: 6px;
+            }
+          }
         .user_avatar {
             width: 64px;
             height: 64px;
             border-radius: 50%;
             margin-right: 8px;
+            float: left;
           }
-        .user_name a{
+        .user_name {
             font-size: 20px;
             color: #FFF;
             text-decoration: none;
             vertical-align: top;
+            padding-left: 6px;
           }
       }
     .card_content {
@@ -157,6 +153,28 @@ table {
     }
   }
 
+.box_list {
+  display:table;
+  border-collapse: separate;
+  border-spacing: 8px 0;
+  width: 100%;
+  margin-bottom: 10px;
+  content: "";
+  margin-bottom: 10px;
+  // float: right;
+    .radius_box {
+      border-radius: 14px;
+      background-color: #D52B2F;
+      display: table-cell;
+      vertical-align: middle;
+      height: 25px;
+      text-align: center;
+        span {
+          color: #FFF;
+          display: block-inline;
+        }
+  }
+}
 
 
 
