@@ -2,7 +2,7 @@
     <div class="col-md-4">
       <div class="card_box">
         <div class="user_area clearfix">
-            <%= image_tag question.user.thumbnail.url, class: "user_avatar" %>
+            <%= link_to image_tag(question.user.thumbnail.url,  class: "user_avatar"), user_path(question.user) %>
           <ul>
             <li>
               <%= link_to "#{question.user.name}", user_path(question.user), class: "user_name" %>
