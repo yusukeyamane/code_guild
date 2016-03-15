@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :chats
   has_many :skill_relations, as: :skill_relationable
-  mount_uploader :thumbnail, ThumbnailUploader
+  mount_uploader :avatar, AvatarUploader
 
 end
