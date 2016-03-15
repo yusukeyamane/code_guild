@@ -61,7 +61,9 @@
                 </ul>
               </div>
             </div>
-
+        <% else %>
+          <div class="col-xs-2" id="navbar_right">
+            <%= link_to "サインインする", new_user_registration_path %>
           </div>
         <% end %>
 
