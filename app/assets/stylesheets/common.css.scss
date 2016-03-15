@@ -108,13 +108,35 @@ table {
   margin-top: 20px;
     .user_area {
         padding: 10px 0 10px;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         ul {
-          float: left;
-          margin-top : 5px;
+          padding-top: 4px;
           li {
             padding-bottom: 6px;
+            .user_detail {
+              float: right;
+              width: -webkit-calc(100% - 72px);
+                  .star {
+                    float: left;
+                    display: inline;
+                    vertical-align: middle;
+                  }
+                  .rate {
+                    color: #FFF;
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 3px;
+                  }
+                  .skill {
+                    background-color: gray;
+                    border-radius: 50%;
+                    width: 15px;
+                    display: inline;
+                    vertical-align: middle;
+                    float: right;
+                }
+              }
             }
           }
         .user_avatar {
@@ -133,7 +155,7 @@ table {
           }
       }
     .card_content {
-        width: 80%;
+        width: 90%;
         height: 70%;
         background-color: #FFF;
         padding: 10px;
