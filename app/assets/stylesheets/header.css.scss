@@ -80,7 +80,7 @@
           position: relative;
         }
         li {
-          padding: 5px;
+          padding: 0 5px;
         }
       }
 
@@ -97,9 +97,9 @@
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
         ul {
           position: relative;
-        }
-        li {
-          padding: 5px;
+          li {
+            padding: 0 10px;
+          }
         }
       }
     }// navbar_center
