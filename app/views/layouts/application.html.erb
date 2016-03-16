@@ -7,20 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if notice.present? %>
-    <div class="alert alert-dismissable alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <p><%= notice %></p>
-    </div>
-  <% end %>
-
-  <% if alert.present? %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <p><%= alert %></p>
-    </div>
-  <% end %>
-    <%= render "layouts/header" %>
+  <%= render "layouts/header" %>
+      <% if notice.present? %>
+        <div class="alert alert-dismissable alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p><%= notice %></p>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert alert-dismissable alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p><%= alert %></p>
+        </div>
+      <% end %>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
