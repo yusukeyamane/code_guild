@@ -7,6 +7,8 @@
     color: #fff;
     line-height: 40px;
     height: 40px;
+    width: 89%;
+    margin: 0 auto;
     a{
       color: #fff;
 
@@ -30,9 +32,8 @@
 
 
     #navbar_left{
-
+      margin-right: 10px;
       #header_logo{
-        margin-left: 40px;
         font-size: 21px;
       }
     }
@@ -41,8 +42,6 @@
       text-align: center;
 
       #centering_question_lecture_nav{
-        width: 208px;
-        margin: 0 auto;
       }
 
       #question_nav{
@@ -55,7 +54,7 @@
 
       .question_fade_trigger{
         float: left;
-
+        margin: 0 20px;
         // &:before{
         //   content: "";
         //   position: relative;
@@ -71,6 +70,7 @@
       #question_nav_menu{
         position: absolute;
         top: 40px;
+        left: 12%;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.9);
         line-height: 50px;
@@ -80,15 +80,12 @@
           position: relative;
         }
         li {
-          padding: 5px;
+          padding: 0 5px;
         }
       }
 
       .lecture_fade_trigger{
         float: left;
-      }
-
-      #lecture_nav{
       }
 
       #lecture_nav_menu{
@@ -100,9 +97,9 @@
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
         ul {
           position: relative;
-        }
-        li {
-          padding: 5px;
+          li {
+            padding: 0 10px;
+          }
         }
       }
     }// navbar_center
@@ -112,7 +109,7 @@
 
     #navbar_right{
       position: relative;
-      right: 30px;
+      float: right;
       text-align: right;
 
       #contract_nav{
