@@ -2,18 +2,18 @@
   <header class="header clearfix">
 
     <div id="hedder_navbar">
-      <div class="row">
+      <!-- <div class="row"> -->
 
-        <div class="col-xs-2" id="navbar_left">
+        <div class="col-xs-1" id="navbar_left">
           <%= link_to "Lectgram", root_path, id: "header_logo" %>
         </div>
 
-        <div class="col-xs-8" id="navbar_center">
+        <div id="navbar_center">
 
           <div id="centering_question_lecture_nav">
 
             <div class="fade_trigger question_fade_trigger">
-              <p id="question_nav">質問</p>
+              <span id="question_nav">質問  <span class="menu_triangle">▼</span></span>
               <div class="fade_area" id="question_nav_menu">
               <ul>
                 <li>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="fade_trigger lecture_fade_trigger">
-              <span id="lecture_nav">レクチャー</span>
+              <span id="lecture_nav">レクチャー  <span class="menu_triangle">▼</span></span>
               <div class="fade_area" id="lecture_nav_menu">
               <ul>
                 <li>
@@ -62,31 +62,13 @@
               </div>
             </div>
         <% else %>
-          <div class="col-xs-2" id="navbar_right">
+           <div class="col-xs-2" id="navbar_right">
             <%= link_to "サインインする", new_user_registration_path %>
           </div>
         <% end %>
 
       </div><!-- .row -->
     </div><!-- #header_navbar -->
-
-
-    <div id="hidden_nav_menu">
-      <div class="row">
-        <div class="col-xs-2">
-        </div>
-        <div class="col-xs-8" id="hidden_nav_menu_center">
-          <div class="question_fade_trigger">
-          </div>
-        </div>
-        <div class="col-xs-2">
-          <div id="contract_nav_menu"></div>
-          <div id="chat_nav_menu"></div>
-          <div id="avatar_fade_trigger">
-          </div>
-        </div>
-      </div> <!-- row -->
-    </div> <!-- #hidden_nav_menu -->
 
   </header>
 <% end %>
