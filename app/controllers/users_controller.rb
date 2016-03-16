@@ -19,7 +19,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :thumbnail, :introduce, :email, :thumbnail_cache)
+    params.require(:user).permit(:name, :avatar, :introduce, :email, :avatar_cache)
   end
 
 end

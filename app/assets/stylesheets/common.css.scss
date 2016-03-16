@@ -105,7 +105,7 @@ table {
 
 .card_box {
   background-color: #EAA09F;
-  margin: 20px 0;
+  margin: 20px 10px;
   padding-bottom: 10px;
   transition: opacity .04s linear;
   border-radius: 6px;
@@ -169,7 +169,6 @@ table {
         border-radius: 6px;
       &:hover {
         -webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.22);
-        // background-color: #EEE;
       }
       h1 {
           color: #D52B2F;
@@ -183,11 +182,14 @@ table {
           color: #EAA09F;
           font-weight: bold;
       }
+      span {
+        color: #000;
+      }
     }
   }
 
 .box_list {
-  display:table;
+  display: table;
   border-collapse: separate;
   border-spacing: 8px 0;
   width: 100%;
@@ -208,13 +210,3 @@ table {
         }
   }
 }
-
-
-
-
-
-
-
-
-
-

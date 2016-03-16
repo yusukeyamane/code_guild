@@ -1,14 +1,12 @@
 .header {
-  position: relative;
   height: 40px;
   background-color: #D52B2F;
   font-family: HiraKakuProN-W3;
 
-
   #hedder_navbar{
     color: #fff;
-    line-height: 39px;
-
+    line-height: 40px;
+    height: 40px;
     a{
       color: #fff;
 
@@ -21,7 +19,13 @@
     .fade_area{
       display: none;
       position: relative;
-      z-index: 10;
+      z-index: 999;
+      ul li:hover{
+        background-color: #EAA09F;
+        a {
+          color: #FFF !important;
+        }
+      }
     }
 
 
@@ -42,7 +46,6 @@
       }
 
       #question_nav{
-        margin-right: 30px;
       }
 
       a{
@@ -51,65 +54,56 @@
 
 
       .question_fade_trigger{
-        width: 5rem;
         float: left;
 
-        &:before{
-          content: "";
-          position: relative;
-          top: 10px;
-          left: 56px;
-          height: 0;
-          width: 0;
-          border: solid 5px transparent;
-          border-top-color: #fff;
-        }
+        // &:before{
+        //   content: "";
+        //   position: relative;
+        //   top: 10px;
+        //   left: 56px;
+        //   height: 0;
+        //   width: 0;
+        //   border: solid 5px transparent;
+        //   border-top-color: #fff;
+        // }
       }
 
       #question_nav_menu{
-        position: relative;
-        top: -15px;
-        right: 130px;
-        width: 300px;
-        height: 50px;
+        position: absolute;
+        top: 40px;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.9);
         line-height: 50px;
         text-align: center;
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
-      }
-
-      .lecture_fade_trigger{
-        width: 8rem;
-        float: left;
-
-        &:before{
-          content: "";
+        ul {
           position: relative;
-          top: 10px;
-          left: 135px;
-          height: 0;
-          width: 0;
-          border: solid 5px transparent;
-          border-top-color: #fff;
+        }
+        li {
+          padding: 5px;
         }
       }
 
+      .lecture_fade_trigger{
+        float: left;
+      }
+
       #lecture_nav{
-        margin-left: 30px;
       }
 
       #lecture_nav_menu{
-        position: relative;
-        top: -15px;
-        left: -120px;
-        width: 380px;
-        height: 50px;
-        margin: 0 auto;
+        position: absolute;
+        top: 40px;
         background: rgba(255, 255, 255, 0.9);
         line-height: 50px;
         text-align: center;
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+        ul {
+          position: relative;
+        }
+        li {
+          padding: 5px;
+        }
       }
     }// navbar_center
 
@@ -120,7 +114,6 @@
       position: relative;
       right: 30px;
       text-align: right;
-
 
       #contract_nav{
         position: relative;
@@ -137,19 +130,16 @@
       #avatar_nav{
         position: relative;
         top: 4px;
-
         width: 30px;
         height: 30px;
         border-radius: 100%;
       }
 
       #avatar_nav_menu{
-        position: relative;
-        top: -15px;
-        right: -30px;
-        padding: 10px;
+        position: absolute;
+        top: 40px;
+        right: 0px;
         width: 150px;
-        height: 140px;
         background: rgba(255, 255, 255, 0.9);
         list-style: none;
         line-height: 35px;
