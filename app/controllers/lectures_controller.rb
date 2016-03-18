@@ -9,6 +9,7 @@ class LecturesController < ApplicationController
 
   def new
     @lecture = Lecture.new
+    @lecture.skill_relations.build
   end
 
   def create
@@ -67,6 +68,11 @@ class LecturesController < ApplicationController
   end
 
   def lecture_params
-    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge)
+    params.require(:lecture).permit(:title, :content, :total_avarable_time, :charge,
+      skill_relations_attributes: [
+      :skill_id,
+      :skill_relationable_type
+      ]
+      )
   end
 end
