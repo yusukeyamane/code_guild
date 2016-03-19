@@ -2,7 +2,11 @@
     <div class="col-md-4">
       <div class="card_box">
         <div class="user_area clearfix">
+          <% if lecture.user.avatar? %>
             <%= link_to image_tag(lecture.user.avatar.url,  class: "user_avatar"), user_path(lecture.user) %>
+          <% else %>
+            <%= link_to image_tag('no-image.png',  class: "user_avatar"), user_path(lecture.user) %>
+            <% end %>
           <ul>
             <li>
               <%= link_to "#{lecture.user.name}", user_path(lecture.user), class: "user_name" %>
