@@ -1,35 +1,51 @@
-// Place all the styles related to the lectures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-// index アクション
-.lecture_posts{
-  background-color: #E4EDE8;
-  border-radius: 10px;
-  margin: 10px;
-
-  .lecture_post_username{
-    font-weight: bold;
-    font-size: 24px;
+.show_left_content {
+  p {
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin-bottom: 30px;
+  }
+  h2 {
+    margin-bottom: 15px;
   }
 }
 
-
-
-// showアクション
-.lectures_show_contents{
-  margin: 10px;
-
-  .lectures_show_avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    background-color: gray;
+.show_circle {
+ width: 100px;
+ height: 100px;
+ background-color:gray;
+ border-radius: 50%;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ display: table;
+ font-size: 20px;
+ span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.1em;
+    color: #FFF;
+    font-size: 18px;
   }
+  .contract_list {
+    float: right;
+  }
+}
 
-  .lectures_show_name{
-    font-weight: bold;
-    font-size: 24px;
+.circle_list {
+  width: 90%;
+  margin: 0 auto;
+  .money {
+    float: left;
+  }
+  .how_to {
+    float: right;
+    // width: 260px;
+    ul li {
+      float: right;
+      padding-left: 20px;
+    }
   }
 }
