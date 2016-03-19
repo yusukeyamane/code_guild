@@ -1,13 +1,36 @@
-<div class="lectures_show_contents">
+<div class="show_left_content col-md-8">
   <% if user_signed_in? && @lecture.user.id == current_user.id %>
     <%= link_to "編集", edit_lecture_path %>
     <%= link_to "削除", lecture_path, method: :delete %>
   <% end %>
-  <div class="lectures_show_avatar"></div>
-  <div class="lectures_show_name"><%=@lecture.user.name%></div>
-  <div class="lectures_show_title"><%=@lecture.title%></div>
-  <div class="lectures_show_content"><%=@lecture.content%></div>
-  <div class="lectures_show_time_and_money">時間：<%=@lecture.total_avarable_time%>  料金：<%=@lecture.charge%></div>
+  <h1><%=@lecture.title%></h1>
+  <p class="lectures_show_content"><%=@lecture.content%>
+  <div class="circle_list">
+    <div class="money">
+      <h2>謝礼</h2>
+        <div class="show_circle">
+          <span>¥  <%=@lecture.total_avarable_time%></span>
+        </div>
+    </div>
+
+    <div class="how_to">
+          <h2>対応方法</h2>
+      <ul class="clearfix">
+        <li>
+          <div class="show_circle">
+            <span>Skype</span>
+          </div>
+        </li>
+        <li>
+          <div class="show_circle">
+            <span class="glyphicon glyphicon-comment"><br>
+              チャット
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   <% if user_signed_in? %>
     <% if @lecture.user.id != current_user.id  %>
       <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture) %>
