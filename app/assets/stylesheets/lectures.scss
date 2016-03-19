@@ -15,7 +15,7 @@
 .show_circle {
  width: 100px;
  height: 100px;
- background-color:gray;
+ background-color: #4A4A4A;
  border-radius: 50%;
  -webkit-border-radius: 50%;
  -moz-border-radius: 50%;
@@ -41,10 +41,27 @@
     float: left;
   }
   .how_to {
-    float: right;
+    float: left;
+    margin-left: 80px;
     ul li {
       float: right;
       padding-left: 20px;
     }
   }
 }
+
+.user_content {
+  background-color: #F3F3F3;
+  padding: 20px;
+  text-align: center;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  p {
+    margin-bottom: 5px;
+  }
+}
+
