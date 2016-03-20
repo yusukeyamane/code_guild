@@ -1,3 +1,4 @@
+//show//
 .show_left_content {
   p {
     margin: 0 auto;
@@ -65,3 +66,21 @@
   }
 }
 
+.contract {
+  text-align: center;
+  width: 100%;
+  padding-top: 60px;
+  .contract_circle {
+    color: #D52B2F;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    color: #D52B2F;
+    margin: 0px auto 0 auto;
+    padding: 13px 13px;
+    border: 1px solid #D52B2F;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
