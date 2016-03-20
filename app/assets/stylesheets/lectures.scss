@@ -84,3 +84,11 @@
     transform: translate(-50%,-50%);
   }
 }
+
+.contract:hover {
+  .contract_circle {
+    background-color: #EAA09F;
+    color: #FFF;
+    border: 1px solid #EAA09F;
+  }
+}
