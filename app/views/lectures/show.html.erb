@@ -3,13 +3,13 @@
     <%= link_to "編集", edit_lecture_path %>
     <%= link_to "削除", lecture_path, method: :delete %>
   <% end %>
-  <h1><%=@lecture.title%></h1>
-  <p class="lectures_show_content"><%=@lecture.content%>
+  <h1><%= @lecture.title%></h1>
+  <p class="show_left_content"><%= @lecture.content%>
   <div class="circle_list clearfix">
     <div class="money">
       <h2>謝礼</h2>
         <div class="show_circle">
-          <span>¥  <%=@lecture.total_avarable_time%></span>
+          <span>¥  <%= @lecture.total_avarable_time%></span>
         </div>
     </div>
 

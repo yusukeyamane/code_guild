@@ -1,20 +1,60 @@
-<div class="questions_show_contents">
+<div class="show_left_content col-md-8 clearfix">
   <% if user_signed_in? && @question.user.id == current_user.id %>
     <%= link_to "編集", edit_question_path %>
     <%= link_to "削除", question_path, method: :delete %>
   <% end %>
-  <div class="questions_show_avatar"></div>
-  <div class="questions_show_name"><%=@question.user.name%></div>
-  <div class="questions_show_title"><%=@question.title%></div>
-  <div class="questions_show_content"><%=@question.content%></div>
-  <% if user_signed_in? %>
-    <% if @question.user.id != current_user.id  %>
-      <%= link_to "この質問に答える", contract_question_path(@question) %>
-      <%= form_tag(action: :purchase, method: :post) do %>
-        <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
-      <% end %>
+  <h1><%= @question.title %></h1>
+  <p class="show_left_content"><%= @question.content %>
+  <div class="circle_list clearfix">
+    <div class="money">
+      <h2>謝礼</h2>
+        <div class="show_circle">
+          <span>¥  <%= @question.reward %></span>
+        </div>
+    </div>
+
+    <div class="how_to">
+          <h2>対応方法</h2>
+      <ul class="clearfix">
+        <li>
+          <div class="show_circle">
+            <span>Skype</span>
+          </div>
+        </li>
+        <li>
+          <div class="show_circle">
+            <span class="glyphicon glyphicon-comment"><br>
+              チャット
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 clearfix">
+  <div class="user_content">
+    <% if @question.user.avatar? %>
+      <%= link_to image_tag(@question.user.avatar.url,  class: "user_avatar"), user_path(@question.user) %>
+    <% else %>
+      <%= link_to image_tag('no-image.png',  class: "user_avatar"), user_path(@question.user) %>
     <% end %>
+    <h2><%= @question.user.name %></h2>
+    <p>質問数</p>
+    <p>6</p>
+    <p>回答者からの評価</p>
+    <span class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "150/30" %></span>
+  </div>
+</div>
+<div class="contract col-md-4">
+  <% if user_signed_in? %>
+      <% if @question.user.id != current_user.id %>
+        <%= link_to "このレクチャーに申し込む", contract_question_path(@question), class: "contract_circle" %>
+          <%= form_tag(action: :purchase, method: :post) do %>
+            <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+          <% end %>
+        <% end %>
   <% else %>
-    <%= link_to "この質問に答える", contract_question_path(@question) %>
+      <%= link_to "このレクチャーに申し込む", contract_question_path(@question), class:"contract_circle" %>
   <% end %>
 </div>
