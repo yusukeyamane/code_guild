@@ -94,7 +94,7 @@ table {
   font-size: 28px;
   margin: 0 auto;
   text-align: center;
-  padding: 0px 0px 10px;
+  padding: 0px 0px 20px;
   font-weight: bold;
 }
 
@@ -106,9 +106,27 @@ table {
   color: #EAA09F;
 }
 
+.search {
+  text-align: center;
+  margin-bottom: 10px;
+  #lecture_search {
+    width: 50%;
+  }
+    .form-control {
+      width: 100%  !important;
+    }
+    .btn {
+      right: 2px;
+      border-top-right-radius: 2px !important;
+      border-bottom-right-radius: 2px !important;
+      color: #FFF;
+      background-color: #999;
+    }
+}
+
 .search_title {
   font-size: 14px;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .search_box {

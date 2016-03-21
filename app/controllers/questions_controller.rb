@@ -1,10 +1,15 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, except: [:index, :new, :create]
+  before_action :set_question, except: [:index, :new, :create, :search]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
     @questions = Question.all
+  end
+
+  def search
+    @questions = Question.where("content LIKE(?)", "%#{params[:keyword]}%").limit(10)
+    render action: "index"
   end
 
   def new
