@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def search
-    @questions = Question.where('content LIKE(?)' || 'title LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @questions = Question.where("content LIKE(?)", "%#{params[:keyword]}%").limit(10)
     render action: "index"
   end
 

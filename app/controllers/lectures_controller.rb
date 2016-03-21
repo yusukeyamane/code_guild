@@ -8,7 +8,7 @@ class LecturesController < ApplicationController
   end
 
   def search
-    @lectures = Lecture.where('content LIKE(?)' || 'title LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @lectures = Lecture.where('content LIKE(?)', "%#{params[:keyword]}%").limit(10)
     render action: "index"
   end
 
