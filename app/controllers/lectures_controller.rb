@@ -1,10 +1,15 @@
 class LecturesController < ApplicationController
 
-  before_action :set_lecture, except: [:index, :new, :create]
+  before_action :set_lecture, except: [:index, :new, :create, :search]
   before_action :authenticate_user!, only: [:new, :contract]
 
   def index
     @lectures = Lecture.all
+  end
+
+  def search
+    @lectures = Lecture.where('content LIKE(?)' || 'title LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    render action: "index"
   end
 
   def new
