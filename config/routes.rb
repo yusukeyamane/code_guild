@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show, :edit, :update]
   resources :questions do
+    collection do
+      get :search
+    end
+
     member do
       get :contract
       post :purchase
@@ -10,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :lectures do
+    collection do
+      get :search
+    end
+
     member do
       get :contract
       post :purchase
