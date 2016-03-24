@@ -85,10 +85,8 @@
   }
 }
 
-.contract:hover {
-  .contract_circle {
+.contract a:hover {
     background-color: #EAA09F;
     color: #FFF;
     border: 1px solid #EAA09F;
-  }
 }
