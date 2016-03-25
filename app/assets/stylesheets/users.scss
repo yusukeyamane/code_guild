@@ -1,3 +1,119 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users_show{
+  margin: 0 100px;
+
+  h3{
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  .avatar{
+    text-align: center;
+  }
+  #avatar{
+    height: 150px;
+    border-radius: 100%;
+  }
+  .status{
+    margin-top: 15px;
+  }
+  #name{
+    font-size: 32px;
+  }
+  .mark{
+    display: inline-block;
+    background-color: #F2F2F2;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+  }
+  .stars{
+    position: relative;
+    top: 10px;
+    height: 35px;
+  }
+  .gray_back{
+    background-color: #F2F2F2;
+    padding: 5px 15px;
+    border-radius: 50px;
+  }
+  .skills{
+    margin-top: 50px;
+  }
+  .skill{
+    margin: 20px 80px;
+  }
+  .one_skill{
+    float: left;
+    margin: 5px 10px 0 0;
+    text-align: center;
+  }
+  .skill_level{
+    line-height: 33px;
+    font-size: 14px;
+  }
+  .introduce{
+    margin-top: 50px;
+  }
+  #introduce_content{
+    margin: 20px 80px;
+  }
+
+  .reviews{
+    margin-top: 50px;
+  }
+
+  .review_contents{
+    margin: 20px 80px;
+  }
+
+  .user_contract{
+    margin-top: 30px;
+  }
+
+  .user_contract_status_cover{
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .user_contract_avatar{
+    float: left;
+  }
+
+  .user_contract_status{
+    float: left;
+    margin: 0 0 0 10px;
+  }
+
+  .review_avatar{
+    width: 50px;
+    border-radius: 100%;
+  }
+
+  .review_name{
+    font-size: 20px;
+  }
+
+  .review_stars{
+    height: 20px;
+  }
+
+  .right_mark_box{
+    float: left;
+    margin: 0 30px;
+  }
+
+  .right_mark{
+    line-height: 50px;
+    font-size: 30px;
+  }
+
+  .review_text{
+    margin: 10px 150px 40px;
+  }
+
+
+}
