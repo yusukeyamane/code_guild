@@ -1,18 +1,72 @@
-<ul class="list-unstyled">
-  <li>名前  <%= @user.name %></li>
-  <li><%= image_tag @user.avatar %></li>
-  <li>紹介文  <%= @user.introduce %></li>
-  <li>メールアドレス  <%= @user.email %></li>
-</ul>
+<div class="users_show">
 
-<br />
+  <div class="row">
+    <div class="user_main">
+      <div class="avatar">
+        <%= image_tag @user.avatar ,id: :avatar%>
+      </div>
+      <div class="status">
+        <span id="name"><%= @user.name %></span>
 
-<%= render partial: 'users/review', collection: @reviews %>
+        <% if user_signed_in? %>
+          <% if current_user.id == @user.id %>
+            <%= link_to 'Edit', edit_user_path(@user.id), class: "edit_btn" %>
+          <% end %>
+        <% end %>
+        <br>
 
-<% if user_signed_in? %>
-  <% if current_user.id == @user.id %>
-    <div class="btn btn-default">
-      <%= link_to 'Edit', edit_user_path %>
+        <span class="mark">L</span>
+        <%= image_tag "rate_stars_60px/rate_stars_#{Contract.lecture_review_rate_avarage(@user.id)}.png", class: :stars %>
+        <span class="rate_amount"><%= Contract.number_of_lecture_review(@user.id) %></span>
+        <br>
+        <span class="mark">Q</span>
+        <%= image_tag "rate_stars_60px/rate_stars_#{Contract.question_review_rate_avarage(@user.id)}.png", class: :stars %>
+        <span class="rate_amount"><%= Contract.number_of_question_review(@user.id) %></span>
+      </div>
     </div>
-  <% end %>
-<% end %>
+  </div><!-- row -->
+
+  <div class="skills clearfix">
+    <h3>スキル</h3>
+    <div class="skill">
+      <% @skill_relations.each do |skill_relation| %>
+      <div class="one_skill">
+        <span class="gray_back"><%= skill_relation.skill.skill_name %></span><br>
+        <span class="skill_level"><%= skill_relation.skill_level %></span>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="introduce">
+    <h3>自己紹介</h3>
+    <div id="introduce_content"><%= @user.introduce %></div>
+  </div>
+
+  <div class="reviews">
+    <h3>レビュー</h3>
+    <div class="review_contents">
+      <%= render partial: 'users/contract', collection: @contracts %>
+    </div>
+    ＞ レビューをもっと見る
+  </div>
+
+  <div class="cards">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="lectures">
+          <h3>レクチャー一覧</h3>
+          <%= render partial: "lecture_contract.html.erb", collection: @contracts %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="questions">
+          <h3>質問一覧</h3>
+          <%= render partial: "question_contract.html.erb", collection: @contracts %>
+        </div>
+      </div>
+    </div><!-- row -->
+  </div>
+
+</div><!-- user_show -->
+

@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @reviews = Review.where(user_id: params[:id])
+    @contracts = Contract.where(answerd_user_id: params[:id])
+    @skill_relations = SkillRelation.where(skill_relationable_type: User, skill_relationable_id: params[:id])
   end
 
   def edit
