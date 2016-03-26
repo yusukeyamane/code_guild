@@ -9,8 +9,8 @@ class Contract < ActiveRecord::Base
     rate_counter = []
     sum = 0
 
-    if self.where(host_user_id: user_id, contractable_type: :Lecture).present?
-      self.where(host_user_id: user_id, contractable_type: :Lecture).each do |contract|
+    if where(host_user_id: user_id, contractable_type: :Lecture).present?
+      where(host_user_id: user_id, contractable_type: :Lecture).each do |contract|
         if contract.review
           rate_counter << contract.review.rate
           sum += contract.review.rate
@@ -23,7 +23,7 @@ class Contract < ActiveRecord::Base
   end
 
   def self.number_of_lecture_review(user_id)
-    self.where(host_user_id: user_id, contractable_type: :Lecture).count
+    where(host_user_id: user_id, contractable_type: :Lecture).count
   end
 
 
@@ -33,8 +33,8 @@ class Contract < ActiveRecord::Base
     rate_counter = []
     sum = 0
 
-    if self.where(guest_user_id: user_id, contractable_type: :Question).present?
-      self.where(guest_user_id: user_id, contractable_type: :Question).each do |contract|
+    if where(guest_user_id: user_id, contractable_type: :Question).present?
+      where(guest_user_id: user_id, contractable_type: :Question).each do |contract|
         if contract.review
           rate_counter << contract.review.rate
           sum += contract.review.rate
@@ -48,7 +48,7 @@ class Contract < ActiveRecord::Base
   end
 
   def self.number_of_question_review(user_id)
-    self.where(guest_user_id: user_id, contractable_type: :Question).count
+    where(guest_user_id: user_id, contractable_type: :Question).count
   end
 
 end
