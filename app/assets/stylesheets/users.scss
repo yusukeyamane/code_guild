@@ -2,25 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .users_show{
-  margin: 0 100px;
+  margin: 0 15%;
 
   h3{
     font-size: 22px;
     font-weight: normal;
   }
 
+  .user_main{
+    width: 500px;
+    margin: 10px auto 0;
+  }
   .avatar{
     text-align: center;
   }
   #avatar{
     height: 150px;
+    width: 150px;
+    float: left;
     border-radius: 100%;
   }
   .status{
-    margin-top: 15px;
+    width: 300px;
+    float: left;
+    margin: 15px 0 0 50px;
   }
   #name{
     font-size: 32px;
+  }
+  .edit_btn{
+    margin: 0 0 0 15px;
   }
   .mark{
     display: inline-block;
@@ -75,7 +86,7 @@
   }
 
   .user_contract_status_cover{
-    width: 600px;
+    width: 400px;
     margin: 0 auto;
   }
 
@@ -111,9 +122,76 @@
     font-size: 30px;
   }
 
-  .review_text{
-    margin: 10px 150px 40px;
+  .content_type{
+    width: 150px;
+    float: left;
   }
 
+  .review_text{
+    width: 400px;
+    margin: 10px auto 40px;
+    padding: 0 20px;
+  }
+
+  .cards{
+    margin-top: 80px;
+    h3{
+      text-align: center;
+    }
+  }
+
+  .lectures{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .questions{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .card{
+    margin: 20px 0;
+    padding: 0 0 20px 0;
+    border-bottom: solid 1px #979797;
+    // box-shadow: 0 0 8px 0;
+
+    h1{
+      font-weight: normal;
+      font-size: 22px;
+      color: #DF423D;
+      margin-bottom: 10px;
+    }
+
+    .box_lists{
+      // text-align: center;
+    }
+
+    .radius_box{
+      display: inline-block;
+      margin: 5px 0 0 0;
+      padding:1px 13px;
+      background-color: #F2F2F2;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    // .left_r{
+    //   position: relative;
+    //   right: 20px;
+    // }
+
+    // .right_r{
+    //   position: relative;
+    //   left: 20px;
+    // }
+
+    p{
+      margin: 10px 0 10px 0;
+      font-size: 14px;
+    }
+
+
+  }// .lecture_card
 
 }
