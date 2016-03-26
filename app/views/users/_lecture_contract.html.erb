@@ -1,0 +1,20 @@
+<% if lecture_contract.contractable_type == "Lecture" %>
+  <div class="card">
+    <%= link_to lecture_path(lecture_contract.contractable) do %>
+      <div class="card_contents">
+        <h1><%= lecture_contract.contractable.title %></h1>
+        <ul class="box_lists">
+          <li class="radius_box left_r">
+            <span><%= lecture_contract.contractable.total_avarable_time %>時間 </span>
+          </li>
+          <li class="radius_box right_r">
+            <span><%= lecture_contract.contractable.charge %>円</span>
+          </li>
+        </ul>
+        <p>対応方法 : Skype, チャット</p>
+      <span><%= lecture_contract.contractable.content %></span>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
