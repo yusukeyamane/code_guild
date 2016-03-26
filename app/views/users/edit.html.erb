@@ -1,33 +1,31 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3>
-      公開プロフィール
-    </h3>
-  </div>
-  <div class="panel-body">
+<div class="user_edit">
+  <h3>
+    プロフィール編集
+  </h3>
+  <div class="">
     <%= form_for @user do |f| %>
-      <div class="form-group">
-        <%=  f.label :avatar %>
+      <div class="avatar">
+        <%= image_tag @user.avatar, id: "avatar" if @user.avatar? %>
+      </div>
+      <div class="avatar_field">
         <%=  f.file_field :avatar %>
-        <%= image_tag @user.avatar if @user.avatar? %>
+      </div>
         <%= f.hidden_field :avatar_cache %>
+      <div class="">
+        <span id="name_label">名前</span>
+        <%= f.text_field :name, placeholder: "質問 太郎",autofocus: true, class: "name" %>
       </div>
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      <div class="">
+        <span id="email_label">メールアドレス</span>
+        <%= f.email_field :email, placeholder: "lectgram@lect.com", autofocus: true, class: "email" %>
       </div>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      <div class="">
+        <span id="introduce_label">自己紹介</span>
+        <%= f.text_area :introduce, placeholder: "プログラミングが大好きです。よろしくお願いします！", autofocus: true, class: "introduce" %>
       </div>
-      <div class="form-group">
-        <%= f.label '自己紹介' %>
-        <%= f.text_area :introduce, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.submit t('.sign_up', default: "更新する"), class: "btn btn-primary" %>
+      <div class="submit">
+        <%= f.submit t('.sign_up', default: "更新する"), id: :submit%>
       </div>
     <% end %>
   </div>
 </div>
-

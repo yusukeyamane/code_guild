@@ -28,14 +28,16 @@
 
   <div class="skills clearfix">
     <h3>スキル</h3>
-    <div class="skill">
-      <% @skill_relations.each do |skill_relation| %>
-      <div class="one_skill">
-        <span class="gray_back"><%= skill_relation.skill.skill_name %></span><br>
-        <span class="skill_level"><%= skill_relation.skill_level %></span>
+    <% if @skill_relations.present? %>
+      <div class="skill">
+        <% @skill_relations.each do |skill_relation| %>
+        <div class="one_skill">
+          <span class="gray_back"><%= skill_relation.skill.skill_name %></span><br>
+          <span class="skill_level"><%= skill_relation.skill_level %></span>
+        </div>
+      <% end %>
       </div>
     <% end %>
-    </div>
   </div>
 
   <div class="introduce">

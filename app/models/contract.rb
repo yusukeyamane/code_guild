@@ -16,7 +16,11 @@ class Contract < ActiveRecord::Base
           sum += contract.review.rate
         end
       end
-      return (sum / rate_counter.count / 2).round
+      unless rate_counter.count == 0
+        return (sum / rate_counter.count / 2).round
+      else
+        return 0
+      end
     else
       return 0
     end
@@ -40,7 +44,11 @@ class Contract < ActiveRecord::Base
           sum += contract.review.rate
         end
       end
-      return (sum / rate_counter.count / 2).round
+      unless rate_counter.count == 0
+        return (sum / rate_counter.count / 2).round
+      else
+        return 0
+      end
     else
       return 0
     end

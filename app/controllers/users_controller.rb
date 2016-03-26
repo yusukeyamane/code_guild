@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params) ? (render :show, notice: 'ユーザー情報が更新されました') : (render :edit, alert: 'ユーザー情報の更新に失敗しました')
+    @user.update(user_params) ? (redirect_to user_path, notice: 'ユーザー情報が更新されました') : (render :edit, alert: 'ユーザー情報の更新に失敗しました')
   end
 
 private

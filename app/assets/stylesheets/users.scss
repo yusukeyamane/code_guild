@@ -194,4 +194,98 @@
 
   }// .lecture_card
 
-}
+}// .user_show
+
+
+
+.user_edit{
+  margin: 0 15%;
+  font-weight: normal;
+
+  h3{
+    margin: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  .avatar{
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  #avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    text-align: center;
+  }
+
+  .avatar_field{
+    width: 100px;
+    margin: 10px auto;
+  }
+
+  #name_label{
+    display: inline-block;
+    margin: 0 150px 0 0;
+    font-size: 20px;
+  }
+
+  .name{
+    margin: 10px 0;
+    border-style: none;
+    font-size: 20px;
+  }
+
+  #email_label{
+    display: inline-block;
+    margin: 0 50px 0 0;
+    font-size: 20px;
+  }
+
+  .email{
+    margin: 10px 0;
+    border-style: none;
+    font-size: 20px;
+  }
+
+  #introduce_label{
+    display: inline-block;
+    position: relative;
+    top: -190px;
+    margin: 0 108px 0 0;
+    font-size: 20px;
+  }
+
+  .introduce{
+    width: 400px;
+    height: 200px;
+    margin: 10px 0;
+    border-style: none;
+    font-size: 16px;
+  }
+
+  .submit{
+    width: 146px;
+    margin: 0 auto;
+  }
+
+  #submit{
+    padding: 5px 40px;
+    border-top: solid 1px #DF423D;
+    border-right: solid 1px #DF423D;
+    border-bottom: solid 1px #DF423D;
+    border-left: solid 1px #DF423D;
+    border-radius: 30px;
+    background-color: #fff;
+    margin: 0 0 200px 0;
+    color: #DF423D;
+
+    &:hover{
+      background-color: #DF423D;
+      color: #fff
+    }
+  }
+
+}// .user_edit
