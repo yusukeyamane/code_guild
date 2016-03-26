@@ -11,13 +11,15 @@
       <div class="right_mark_box">
         <span class="glyphicon glyphicon-chevron-right right_mark"></span>
       </div>
-      <% if contract.contractable_type == "Lecture" %>
-        レクチャー<br>
-        <%= contract.contractable.title %>
-      <% elsif contract.contractable_type == "Question" %>
-        質問<br>
-        <%= contract.contractable.title %>
-      <% end %>
+      <div class="content_type">
+        <% if contract.contractable_type == "Lecture" %>
+          レクチャー<br>
+          <%= contract.contractable.title %>
+        <% elsif contract.contractable_type == "Question" %>
+          質問<br>
+          <%= contract.contractable.title %>
+        <% end %>
+      </div>
     </div>
     <div class="review_text">
       <%= contract.review.content %>
