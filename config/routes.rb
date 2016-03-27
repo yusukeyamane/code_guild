@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   end
 
   resources :contracts, only: [:index] do
+    collection do
+      post :search
+    end
     resources :chats, only: [:index, :create]
     resource :reviews, only: [:new, :create]
     collection do
