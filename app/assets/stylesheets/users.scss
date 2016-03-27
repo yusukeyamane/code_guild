@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .users_show{
-  margin: 0 15%;
+  margin: 30px 20%;
 
   h3{
     font-size: 22px;
@@ -86,7 +86,7 @@
   }
 
   .user_contract_status_cover{
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
   }
 
@@ -123,7 +123,7 @@
   }
 
   .content_type{
-    width: 150px;
+    width: 200px;
     float: left;
   }
 
@@ -132,6 +132,10 @@
     margin: 10px auto 40px;
     padding: 0 20px;
   }
+
+
+
+
 
   .cards{
     margin-top: 80px;
@@ -149,6 +153,10 @@
     width: 300px;
     margin: 0 auto;
   }
+
+
+
+
 
   .card{
     margin: 20px 0;
@@ -192,14 +200,17 @@
     }
 
 
-  }// .lecture_card
+  }// .card
+
+
+
 
 }// .user_show
 
 
 
 .user_edit{
-  margin: 0 15%;
+  margin: 0 20%;
   font-weight: normal;
 
   h3{
