@@ -48,7 +48,7 @@ class LecturesController < ApplicationController
 
   def contract
     if Contract.where(contractable_id: params[:id]).where(contractable_type: :Lecture).blank?
-      contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id)
+      contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id, answerd_user_id: @lecture.user.id, asked_user_id: current_user.id)
 
       if contract.save
         ContractMailer.lecure_contract_notificate(contract).deliver_now

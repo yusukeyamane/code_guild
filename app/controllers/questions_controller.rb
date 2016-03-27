@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
 
   def contract
     if Contract.where(contractable_id: params[:id]).where(contractable_type: :Question).blank?
-      contract = Contract.new(contractable_id: params[:id], contractable_type: :Question, host_user_id: @question.user.id, guest_user_id: current_user.id)
+      contract = Contract.new(contractable_id: params[:id], contractable_type: :Question, host_user_id: @question.user.id, guest_user_id: current_user.id, answerd_user_id: current_user.id, asked_user_id: @question.user.id)
 
       if contract.save
         ContractMailer.question_contract_notificate(contract).deliver_now

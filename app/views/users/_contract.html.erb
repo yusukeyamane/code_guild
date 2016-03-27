@@ -1,0 +1,28 @@
+<% if contract.review %>
+  <div class="user_contract">
+    <div class="user_contract_status_cover clearfix">
+      <div class="user_contract_avatar">
+        <%= image_tag contract.review.user.avatar, class: :review_avatar%>
+      </div>
+      <div class="user_contract_status">
+        <span class="review_name"><%= contract.review.user.name %></span><br>
+        <%= image_tag "rate_stars_60px/rate_stars_#{(contract.review.rate / 2).round}.png", class: :review_stars %>
+      </div>
+      <div class="right_mark_box">
+        <span class="glyphicon glyphicon-chevron-right right_mark"></span>
+      </div>
+      <div class="content_type">
+        <% if contract.contractable_type == "Lecture" %>
+          レクチャー<br>
+          <%= contract.contractable.title %>
+        <% elsif contract.contractable_type == "Question" %>
+          質問<br>
+          <%= contract.contractable.title %>
+        <% end %>
+      </div>
+    </div>
+    <div class="review_text">
+      <%= contract.review.content %>
+    </div>
+  </div>
+<% end %>

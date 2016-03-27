@@ -1,3 +1,291 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users_show{
+  margin: 0 15%;
+
+  h3{
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  .user_main{
+    width: 500px;
+    margin: 10px auto 0;
+  }
+  .avatar{
+    text-align: center;
+  }
+  #avatar{
+    height: 150px;
+    width: 150px;
+    float: left;
+    border-radius: 100%;
+  }
+  .status{
+    width: 300px;
+    float: left;
+    margin: 15px 0 0 50px;
+  }
+  #name{
+    font-size: 32px;
+  }
+  .edit_btn{
+    margin: 0 0 0 15px;
+  }
+  .mark{
+    display: inline-block;
+    background-color: #F2F2F2;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+  }
+  .stars{
+    position: relative;
+    top: 10px;
+    height: 35px;
+  }
+  .gray_back{
+    background-color: #F2F2F2;
+    padding: 5px 15px;
+    border-radius: 50px;
+  }
+  .skills{
+    margin-top: 50px;
+  }
+  .skill{
+    margin: 20px 80px;
+  }
+  .one_skill{
+    float: left;
+    margin: 5px 10px 0 0;
+    text-align: center;
+  }
+  .skill_level{
+    line-height: 33px;
+    font-size: 14px;
+  }
+  .introduce{
+    margin-top: 50px;
+  }
+  #introduce_content{
+    margin: 20px 80px;
+  }
+
+  .reviews{
+    margin-top: 50px;
+  }
+
+  .review_contents{
+    margin: 20px 80px;
+  }
+
+  .user_contract{
+    margin-top: 30px;
+  }
+
+  .user_contract_status_cover{
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .user_contract_avatar{
+    float: left;
+  }
+
+  .user_contract_status{
+    float: left;
+    margin: 0 0 0 10px;
+  }
+
+  .review_avatar{
+    width: 50px;
+    border-radius: 100%;
+  }
+
+  .review_name{
+    font-size: 20px;
+  }
+
+  .review_stars{
+    height: 20px;
+  }
+
+  .right_mark_box{
+    float: left;
+    margin: 0 30px;
+  }
+
+  .right_mark{
+    line-height: 50px;
+    font-size: 30px;
+  }
+
+  .content_type{
+    width: 150px;
+    float: left;
+  }
+
+  .review_text{
+    width: 400px;
+    margin: 10px auto 40px;
+    padding: 0 20px;
+  }
+
+  .cards{
+    margin-top: 80px;
+    h3{
+      text-align: center;
+    }
+  }
+
+  .lectures{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .questions{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .card{
+    margin: 20px 0;
+    padding: 0 0 20px 0;
+    border-bottom: solid 1px #979797;
+    // box-shadow: 0 0 8px 0;
+
+    h1{
+      font-weight: normal;
+      font-size: 22px;
+      color: #DF423D;
+      margin-bottom: 10px;
+    }
+
+    .box_lists{
+      // text-align: center;
+    }
+
+    .radius_box{
+      display: inline-block;
+      margin: 5px 0 0 0;
+      padding:1px 13px;
+      background-color: #F2F2F2;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    // .left_r{
+    //   position: relative;
+    //   right: 20px;
+    // }
+
+    // .right_r{
+    //   position: relative;
+    //   left: 20px;
+    // }
+
+    p{
+      margin: 10px 0 10px 0;
+      font-size: 14px;
+    }
+
+
+  }// .lecture_card
+
+}// .user_show
+
+
+
+.user_edit{
+  margin: 0 15%;
+  font-weight: normal;
+
+  h3{
+    margin: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  .avatar{
+    width: 150px;
+    margin: 30px auto 0;
+  }
+
+  #avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    text-align: center;
+  }
+
+  .avatar_field{
+    width: 100px;
+    margin: 10px auto 30px;
+  }
+
+  #name_label{
+    display: inline-block;
+    margin: 0 150px 0 0;
+    font-size: 20px;
+  }
+
+  .name{
+    margin: 10px 0;
+    border-style: none;
+    font-size: 20px;
+  }
+
+  #email_label{
+    display: inline-block;
+    margin: 0 50px 0 0;
+    font-size: 20px;
+  }
+
+  .email{
+    margin: 10px 0;
+    border-style: none;
+    font-size: 20px;
+  }
+
+  #introduce_label{
+    display: inline-block;
+    position: relative;
+    top: -190px;
+    margin: 0 108px 0 0;
+    font-size: 20px;
+  }
+
+  .introduce{
+    width: 400px;
+    height: 200px;
+    margin: 10px 0;
+    border-style: none;
+    font-size: 16px;
+  }
+
+  .submit{
+    width: 146px;
+    margin: 0 auto;
+  }
+
+  #submit{
+    padding: 5px 40px;
+    border-top: solid 1px #DF423D;
+    border-right: solid 1px #DF423D;
+    border-bottom: solid 1px #DF423D;
+    border-left: solid 1px #DF423D;
+    border-radius: 30px;
+    background-color: #fff;
+    margin: 0 0 200px 0;
+    color: #DF423D;
+
+    &:hover{
+      background-color: #DF423D;
+      color: #fff
+    }
+  }
+
+}// .user_edit

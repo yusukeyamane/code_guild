@@ -20,6 +20,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6, b, strong {
@@ -91,6 +92,8 @@ table {
 // lecture and question
 h1 {
   color: #D52B2F;
+.title {
+  color: #DF423D;
   font-size: 28px;
   margin: 0 auto;
   text-align: center;
@@ -99,7 +102,7 @@ h1 {
 }
 
 .basic_red {
-  color: #D52B2F;
+  color: #DF423D;
 }
 
 .basic_pink {
@@ -202,7 +205,7 @@ h1 {
         -webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.22);
       }
       h1 {
-          color: #D52B2F;
+          color: #DF423D;
           font-size: 20px;
           font-weight: bold;
       }
@@ -229,7 +232,7 @@ h1 {
   margin-bottom: 10px;
     .radius_box {
       border-radius: 14px;
-      background-color: #D52B2F;
+      background-color: #DF423D;
       display: table-cell;
       vertical-align: middle;
       height: 25px;
