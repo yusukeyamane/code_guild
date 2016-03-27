@@ -1,3 +1,172 @@
+.contracts_index{
+
+  h1{
+    margin: 20px 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 26px
+  }
+
+  .menu{
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  .menu li{
+    padding: 5px 20px;
+    width: 120px;
+    float: left;
+    margin: 20px 50px;
+    text-align: center;
+  }
+
+  .selected{
+    padding: 5px 20px;
+    border-radius: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+
+  .category{
+    border-bottom: solid 1px #999;
+  }
+
+  .usertype{
+    border-bottom: solid 1px #999;
+  }
+
+  .search_results{
+    padding: 30px 0 50px;
+    margin: 30px 0 0 0;
+    background-color: #F4F4F4;
+  }
+
+  .results_box{
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+  .card{
+    width: 300px;
+    margin: 20px 50px;
+    padding: 0 0 20px 0;
+    float: left;
+    background-color: #fff;
+
+    .user_info{
+
+
+      .avatar_side{
+        width: 40px;
+        float: left;
+        margin: 10px 0 0 15px;
+      }
+
+      .avatar{
+        width: 35px;
+        border-radius: 100%;
+      }
+
+      .name_side{
+        width: 200px;
+        float: left;
+        margin: 7px 0 0 0;
+      }
+
+      .name{
+        font-size: 14px;
+        color: #DF423D;
+      }
+
+      .stars{
+        position: relative;
+        height: 15px;
+        top: -5px;
+      }
+
+      .rate_amount{
+        position: relative;
+        font-size: 12px;
+        top: -8px;
+      }
+
+    }// .user_info
+
+
+    hr{
+      width: 250px;
+      border: 0;
+      border-bottom: solid 1px #DDD;
+      margin: 0 auto;
+    }
+
+    h1{
+      font-weight: normal;
+      font-size: 22px;
+      color: #DF423D;
+      margin-bottom: 10px;
+    }
+
+    .box_lists{
+      width: 220px;
+      margin: 0 auto;
+    }
+
+    .radius_box{
+      width: 100px;
+      margin: 5px 0 0 0;
+      padding:1px 10px;
+      background-color: #F2F2F2;
+      border-radius: 30px;
+      float: left;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .left_r{
+      position: relative;
+      margin-right: 20px;
+    }
+
+    .right_r{
+      position: relative;
+    }
+
+    p{
+      margin: 15px 15px 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .text{
+      margin: 25px 15px 10px 23px;
+      font-size: 14px;
+    }
+
+
+  }// .card
+
+
+
+
+
+
+
+
+}// .contracts_index
+
+
+
+
+
+
+
 // contracts#index
 .contracts_index_contents{
 
