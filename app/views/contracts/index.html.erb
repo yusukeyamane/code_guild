@@ -1,36 +1,58 @@
-<div class="contracts_index_contents">
-  <div class="contracts_index_title">あなたのContract一覧</div>
-  <div class="contracts_index_questions">質問</div>
-  <div class="contracts_index_questions_hosts">host</div>
+<div class="contracts_index">
+  <h1><%= current_user.name %>さんの契約一覧</h1>
+  <ul class="menu category clearfix">
+    <li id="All" class="selected category_all">全て</li>
+    <li id="Lecture" class="category_lecture">レクチャー</li>
+    <li id="Question" class="category_question">質問</li>
+  </ul>
+  <ul class="menu usertype clearfix">
+    <li id="usertype_all" class="selected">全て</li>
+    <li id="usertype_host">ホスト</li>
+    <li id="usertype_guest">ゲスト</li>
+  </ul>
+  <ul class="menu contract_situation clearfix">
+    <li id="will_do" class="before_contract">申請中</li>
+    <li id="doing" class="selected current_contract">契約中</li>
+    <li id="done" class="after_contract">契約終了</li>
+  </ul>
 
-  <% if @host_question_contracts.present? %>
-    <%= render partial: "host_question_contract", collection: @host_question_contracts %>
-  <% else %>
-    <div class="contracts_index_nothing">あなたが投稿した質問はありません。</div>
+  <%= form_tag search_contracts_path, id: :form, remote: true do %>
+  <%= hidden_field_tag :category_form, "" %>
+  <%= hidden_field_tag :usertype_form, "" %>
+  <%= hidden_field_tag :contract_situation_form, "" %>
   <% end %>
 
-  <div class="contracts_index_questions_guests">guest</div>
-  <% if @guest_question_contracts.present? %>
-    <%= render partial: "guest_question_contract", collection: @guest_question_contracts %>
-  <% else %>
-    <div class="contracts_index_nothing">あなたが対応した質問はありません。</div>
-  <% end %>
-
-
-  <div class="contracts_index_lectures">レクチャー</div>
-
-  <div class="contracts_index_lectures_hosts">host</div>
-  <% if @host_lecture_contracts.present? %>
-    <%= render partial: "host_lecture_contract", collection: @host_lecture_contracts %>
-  <% else %>
-    <div class="contracts_index_nothing">あなたが作成したレクチャーはありません。</div>
-  <% end %>
-
-  <div class="contracts_index_lectures_hosts">guest</div>
-  <% if @guest_lecture_contracts.present? %>
-    <%= render partial: "guest_lecture_contract", collection: @guest_lecture_contracts %>
-  <% else %>
-    <div class="contracts_index_nothing">あなたが申し込んだレクチャーはありません。</div>
-  <% end %>
-
+  <div class="search_results">
+    <div class="results_box clearfix">
+      <%= render partial: "contract", collection: @contracts %>
+    </div>
+  </div>
 </div>
+
+<script>
+  search_selects = []
+
+  $(".category li").click(function(){
+    $(".category li.selected").removeClass('selected');
+    $(this).addClass('selected');
+  });
+  $(".usertype li").click(function(){
+    $(".usertype li.selected").removeClass('selected');
+    $(this).addClass('selected');
+  });
+  $(".contract_situation li").click(function(){
+    $(".contract_situation li.selected").removeClass('selected');
+    $(this).addClass('selected');
+  });
+
+  $("li").click(function() {
+    var category_id = $(".category li.selected").attr("id")
+    var usertype_id = $(".usertype li.selected").attr("id")
+    var contract_situation_id = $(".contract_situation li.selected").attr("id")
+    $("#category_form").val(category_id);
+    $("#usertype_form").val(usertype_id);
+    $("#contract_situation_form").val(contract_situation_id);
+    $("#form").submit();
+  });
+
+</script>

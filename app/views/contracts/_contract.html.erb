@@ -1,0 +1,74 @@
+<% if contract.contractable_type == "Lecture" %>
+  <div class="card">
+
+    <div class="user_info clearfix">
+      <div class="avatar_side">
+        <%= image_tag contract.contractable.user.avatar, class: :avatar %>
+      </div>
+      <div class="name_side">
+        <span class="name"><%= contract.contractable.user.name %></span><br>
+        <%= image_tag "rate_stars_60px/rate_stars_#{contract.lecture_review_rate_avarage}.png", class: :stars %>
+        <span class="rate_amount"><%= contract.number_of_lecture_review %></span>
+      </div>
+    </div>
+
+    <hr>
+
+    <%= link_to lecture_path(contract.contractable) do %>
+      <div class="card_contents">
+        <h1><%= contract.contractable.title %></h1>
+        <ul class="box_lists clearfix">
+          <li class="radius_box left_r">
+            <span><%= contract.contractable.total_avarable_time %>時間 </span>
+          </li>
+          <li class="radius_box right_r">
+            <span><%= contract.contractable.charge %>円</span>
+          </li>
+        </ul>
+        <p>対応方法 : Skype, チャット</p>
+        <hr>
+        <div class="text"><%= contract.contractable.content %></div>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
+
+
+
+<% if contract.contractable_type == "Question" %>
+  <div class="card">
+
+    <div class="user_info clearfix">
+      <div class="avatar_side">
+        <%= image_tag contract.contractable.user.avatar, class: :avatar %>
+      </div>
+      <div class="name_side">
+        <span class="name"><%= contract.contractable.user.name %></span><br>
+        <%= image_tag "rate_stars_60px/rate_stars_#{contract.lecture_review_rate_avarage}.png", class: :stars %>
+        <span class="rate_amount"><%= contract.number_of_lecture_review %></span>
+      </div>
+    </div>
+
+    <hr>
+
+    <%= link_to lecture_path(contract.contractable) do %>
+      <div class="card_contents">
+        <h1><%= contract.contractable.title %></h1>
+        <ul class="box_lists clearfix">
+          <li class="radius_box left_r">
+            <span><%= contract.contractable.timelimit %>時間 </span>
+          </li>
+          <li class="radius_box right_r">
+            <span><%= contract.contractable.reward %>円</span>
+          </li>
+        </ul>
+        <p>対応方法 : Skype, チャット</p>
+        <hr>
+        <div class="text"><%= contract.contractable.content %></div>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
+
