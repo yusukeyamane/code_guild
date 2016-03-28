@@ -1,2 +1,19 @@
-- <%= chat.user.name %> -</br>
-<%= chat.message %></br></br>
+<div class="chat_card">
+  <% if chat.user_id == current_user.id %>
+    <div class="own_chat">
+      <div class="user_info clearfix">
+        <div class="chat_avatar"><%= image_tag chat.user.avatar, class: :avatar %></div>
+        <div class="chat_username"><%= chat.user.name %></div>
+      </div>
+      <div class="chat_message"><%= chat.message %></div>
+    </div>
+  <% else %>
+    <div class="another_chat">
+      <div class="user_info clearfix">
+        <div class="chat_avatar"><%= image_tag chat.user.avatar, class: :avatar %></div>
+        <div class="chat_username"><%= chat.user.name %></div>
+      </div>
+      <div class="chat_message"><%= chat.message %></div>
+    </div>
+  <% end %>
+</div>
