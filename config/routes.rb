@@ -28,12 +28,16 @@ Rails.application.routes.draw do
     collection do
       post :search
     end
-    resources :chats, only: [:index, :create]
     resource :reviews, only: [:new, :create]
     collection do
       resources :reviews, only: [:edit, :update]
     end
   end
 
+  resources :chats, only: [:index, :show, :create] do
+    collection do
+      post :search
+    end
+  end
 
 end
