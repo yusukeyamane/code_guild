@@ -1,23 +1,35 @@
-<%= form_for [@contract, @chat], :remote => true do |f| %>
-<%= f.text_field :message %>
-<%= f.submit 'send' %>
-<% end %>
+<div class="chats_index">
 
-<%= render partial: "chat", collection: @chats %>
+  <h1><%= current_user.name %>さんのチャット一覧</h1>
+  <ul class="menu contract_situation clearfix">
+    <li id="will_do" class="before_contract">申請中</li>
+    <li id="doing" class="selected current_contract">契約中</li>
+    <li id="done" class="after_contract">契約終了</li>
+  </ul>
 
-<div id='messagelog'></div>
+  <%= form_tag search_chats_path, id: :form, remote: true do %>
+  <%= hidden_field_tag :contract_situation_form, "" %>
+  <% end %>
 
-<script type="text/javascript">
-  var pusher = new Pusher("<%= @pusher_access_key %>");
-  var channel = pusher.subscribe('general_channel');
-  channel.bind('chat_event', function(data) {
-    if (<%= @contract.id %> == data.contract_id) {
-      var messagelog = document.getElementById('messagelog');
-      var messagediv = document.createElement('div');
-      messagediv.innerHTML = "- " + data.username + " -<br>" + data.message + "<br><br>";
-      messagelog.appendChild(messagediv);
-      document.getElementById('chat_message').value = "";
-    }
+  <div class="search_results">
+    <div class="results_box clearfix">
+      <%= render partial: "contract", collection: @contracts %>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+  $(".contract_situation li").click(function(){
+    $(".contract_situation li.selected").removeClass('selected');
+    $(this).addClass('selected');
+  });
+
+  $("li").click(function() {
+    var contract_situation_id = $(".contract_situation li.selected").attr("id")
+    $("#contract_situation_form").val(contract_situation_id);
+    $("#form").submit();
   });
 
 </script>

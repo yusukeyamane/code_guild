@@ -1,0 +1,29 @@
+<%= link_to chat_path(contract.id) do %>
+  <div class="card">
+    <div class="info clearfix">
+      <div class="left_side">
+        <div class="avatar_side">
+          <%= image_tag contract.contractable.user.avatar, class: :avatar %>
+        </div>
+        <div class="name_side">
+          <span class="name"><%= contract.contractable.user.name %></span><br>
+        </div>
+      </div>
+      <div class="right_side">
+        <div class="category">
+          <% if contract.contractable_type == "Lecture" %>
+          L
+          <% elsif contract.contractable_type == "Question" %>
+          Q
+          <% end %>
+        </div>
+        <div class="title"><%= contract.contractable.title %></div>
+      </div>
+    </div><!-- .info -->
+
+    <div class="message">
+      <%= Contract.newest_chat_message(contract.id) %>
+    </div>
+
+  </div><!-- .card -->
+<% end %>
