@@ -20,17 +20,14 @@
       }
     }
 
+    .fade_trigger{
+      cursor: pointer;
+    }
 
     .fade_area{
       display: none;
       position: relative;
       z-index: 999;
-      ul li:hover{
-        background-color: #EAA09F;
-        a {
-          color: #FFF !important;
-        }
-      }
     }
 
 
