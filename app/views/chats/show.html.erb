@@ -2,14 +2,27 @@
 
     <div class="info_wrapper">
       <div class="info clearfix">
-        <div class="category">
-          <% if @contract.contractable_type == "Lecture" %>
-          L
-          <% elsif @contract.contractable_type == "Question" %>
-          Q
+
+        <% if @contract.contractable_type == "Lecture" %>
+          <%= link_to lecture_path(@contract.contractable.id) do %>
+
+            <div class="category">
+              L
+            </div>
+            <div class="title"><%= @contract.contractable.title %></div>
+
           <% end %>
-        </div>
-        <div class="title"><%= @contract.contractable.title %></div>
+        <% elsif @contract.contractable_type == "Question" %>
+          <%= link_to question_path(@contract.contractable.id) do %>
+
+            <div class="category">
+              Q
+            </div>
+            <div class="title"><%= @contract.contractable.title %></div>
+
+          <% end %>
+        <% end %>
+
       </div>
     </div>
 
