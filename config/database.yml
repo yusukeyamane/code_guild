@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: code_guild_test
+  database: code_guild_production
+  username: root
+  password:
