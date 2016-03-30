@@ -1,15 +1,31 @@
-<%= form_for @lecture do |f| %>
-  タイトル：<%= f.text_field :title, placeholder: "Railsでお悩みの方" %></br>
-  内容：<%= f.text_field :content, placeholder: "Rails教えますよ" %></br>
-
-  <%= f.fields_for :skill_relations do |skill| %>
-    対象スキル：<%= skill.select :skill_id, Skill.all.map{|s| [s.skill_name, s.id]} %></br>
-    <% end %>
-
-  対応合計時間：<%= f.text_field :total_avarable_time, placeholder: "10" %><br>
-  料金：<%= f.text_field :charge, placeholder: "10,000" %></br>円
-  <%= f.hidden_field :skill_relationable_type, value: "Lecture" %>
-   <div class="field">
-  </div>
-  <%= f.submit "この内容でレクチャーを作成する"%>
-<% end %>
+<div class="lecture_new">
+  <h2>レクチャー作成</h2>
+    <div class="user_area clearfix">
+      <%= image_tag(current_user.avatar, class: :avatar) %>
+      <span><%= current_user.name %></span>
+    </div>
+  <%= form_for @lecture do |f| %>
+    <%= f.text_field :title, placeholder: "ここにタイトルを入力", class: "new_content" %></br>
+    <%= f.text_area :content, placeholder: "詳しい説明をこちらに記入" %></br>
+    <div class="form-group col-md-4">
+    <%= f.fields_for :skill_relations do |skill| %>
+    <%= f.label :skill, '対応言語' %><br>
+      <%= skill.select :skill_id, Skill.all.map{|s| [s.skill_name, s.id]} %></br>
+      <% end %>
+    <%= f.hidden_field :skill_relationable_type, value: "Lecture" %>
+    </div>
+    <div class="form-group col-md-4">
+    <%= f.label :total_avarable_time, '授業時間' %><br>
+    <%= f.select :charge, [["0.5時間", "0.5"], ["1時間", "1"], ["1.5時間", "1.5"], ["2時間", "2"], ["2.5時間", "2.5"], ["3時間", "3"]] %>
+    </div>
+    <div class="form-group col-md-4">
+    <%= f.label :charge, '受講料' %><br>
+    <%= f.select :charge, [["1000円", "10000"], ["2000円", "2000"], ["3000円", "3000"]] %>
+    </div>
+    <div class="col-md-12">
+      <div class="radius_box">
+        <%= f.submit "この内容でレクチャーを作成する", class: "btn"%>
+      </div>
+    </div>
+  <% end %>
+</div>
