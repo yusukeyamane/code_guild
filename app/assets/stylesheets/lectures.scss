@@ -133,6 +133,10 @@
   .radius_box {
     text-align: center;
     margin-top: 20px;
+    input:focus {
+      outline: none;
+      outline-offset: none;
+    }
   }
   .new_content {
     margin: 0 auto;
