@@ -46,7 +46,7 @@
         <% if user_signed_in? %>
           <div class="col-xs-2" id="navbar_right">
             <%= link_to "", contracts_path, class: "glyphicon glyphicon-list-alt", id: "contract_nav" %>
-            <%= link_to "", contract_chats_path(current_user.id), class: "glyphicon glyphicon-comment", id: "chat_nav" %>
+            <%= link_to "", chats_path, class: "glyphicon glyphicon-comment", id: "chat_nav" %>
             <!-- 一旦contract_chats_pathの引数をcurrent_user.idにしてエラーを防ぐ -->
 
             <div class="fade_trigger avatar_fade_trigger">

@@ -1,2 +1,19 @@
-- <%= chat.user.name %> -</br>
-<%= chat.message %></br></br>
+<div class="chat_card">
+  <% if chat.user_id == current_user.id %>
+    <div class="own_chat">
+      <div class="user_info clearfix">
+        <div class="chat_avatar"><%= link_to image_tag(chat.user.avatar, class: :avatar), user_path(chat.user) %></div>
+        <div class="chat_username"><%= link_to chat.user.name, user_path(chat.user), class: :username %></div>
+      </div>
+      <div class="chat_message"><%= chat.message %></div>
+    </div>
+  <% else %>
+    <div class="another_chat">
+      <div class="user_info clearfix">
+        <div class="chat_avatar"><%= link_to image_tag(chat.user.avatar, class: :avatar), user_path(chat.user) %></div>
+        <div class="chat_username"><%= link_to chat.user.name, user_path(chat.user), class: :username %></div>
+      </div>
+      <div class="chat_message"><%= chat.message %></div>
+    </div>
+  <% end %>
+</div>

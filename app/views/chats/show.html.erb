@@ -1,0 +1,115 @@
+<div class="chats_show">
+
+    <div class="info_wrapper">
+      <div class="info clearfix">
+
+        <% if @contract.contractable_type == "Lecture" %>
+          <%= link_to lecture_path(@contract.contractable.id) do %>
+
+            <div class="category">
+              L
+            </div>
+            <div class="title"><%= @contract.contractable.title %></div>
+
+          <% end %>
+        <% elsif @contract.contractable_type == "Question" %>
+          <%= link_to question_path(@contract.contractable.id) do %>
+
+            <div class="category">
+              Q
+            </div>
+            <div class="title"><%= @contract.contractable.title %></div>
+
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+
+  <div class="get_contents">
+
+    <div class="db_chats">
+      <%= render partial: "chat", collection: @chats %>
+    </div>
+
+    <div class='pusher_log'></div>
+    <div class="bottom_pointer"></div>
+
+  </div><!-- get_contents -->
+
+
+
+
+  <div class="form_area">
+    <div class="form">
+      <%= form_for @chat, :remote => true do |f| %>
+        <%= f.text_field :message, autofocus: true, class: :field %>
+        <%= f.hidden_field :contract_id, value: @contract.id %>
+        <%= f.submit '↑', class: "submit" %>
+      <% end %>
+    </div>
+  </div>
+
+
+</div><!-- .chats_show -->
+
+<div class="hide">
+
+  <div class="own_chat_card">
+    <div class="chat_card">
+      <div class="own_chat">
+        <div class="user_info clearfix">
+          <div class="chat_avatar"><%= image_tag current_user.avatar, class: :avatar %></div>
+          <div class="chat_username"></div>
+        </div>
+        <div class="chat_message"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="another_chat_card">
+    <div class="chat_card">
+      <div class="another_chat">
+        <div class="user_info clearfix">
+          <div class="chat_avatar"><%= image_tag @another_user.avatar, class: :avatar %></div>
+          <div class="chat_username"></div>
+        </div>
+        <div class="chat_message"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+
+$("html, body").animate({scrollTop: $(".bottom_pointer").offset().top}, "fast");
+
+  var pusher = new Pusher("<%= @pusher_access_key %>");
+  var channel = pusher.subscribe('general_channel');
+  channel.bind('chat_event', function(data) {
+
+    if (<%= @contract.id %> == data.contract_id) {
+      var pusher_log = $(".pusher_log");
+
+      if (<%= current_user.id %> == data.user_id ) {
+        $(".hide .own_chat_card .chat_username").text(data.username)
+        $(".hide .own_chat_card .chat_message").text(data.message)
+        var own = $(".own_chat_card").clone();
+        pusher_log.append(own);
+      } else {
+        $(".hide .another_chat_card .chat_username").text(data.username)
+        $(".hide .another_chat_card .chat_message").text(data.message)
+        var another = $(".another_chat_card").clone();
+        pusher_log.append(another);
+      };
+
+      $("html, body").animate({scrollTop: $(".bottom_pointer").offset().top}, "fast");
+      document.getElementById('chat_message').value = "";
+    };
+
+  });
+
+</script>

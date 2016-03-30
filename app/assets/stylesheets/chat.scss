@@ -1,3 +1,275 @@
-// Place all the styles related to the chat controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.chats_index{
+  h1{
+    margin: 20px 0;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .menu{
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  .menu li{
+    padding: 5px 20px;
+    width: 120px;
+    float: left;
+    margin: 20px 50px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .selected{
+    padding: 5px 20px;
+    border-radius: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+
+  .search_results{
+    padding: 30px 0 400px;
+    margin: 30px 0 0 0;
+    background-color: #F4F4F4;
+  }
+
+  .results_box{
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+
+
+  .card{
+    width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+
+    .left_side{
+      margin: 15px 0 0 15px;
+    }
+
+    .avatar_side{
+      width: 35px;
+      float: left;
+    }
+
+    .avatar{
+      width: 35px;
+      border-radius: 100%;
+    }
+
+    .name_side{
+      width: 200px;
+      float: left;
+      margin: 5px 0 0 5px;
+    }
+
+    .name{
+      color: #DF423D;
+      font-size: 14px;
+    }
+
+    .right_side{
+      margin: 20px 0 0 10px;
+    }
+
+    .category{
+      width: 25px;
+      height: 25px;
+      float: left;
+      border-radius: 100%;
+      background-color: #333;
+      font-weight: normal;
+      color: #fff;
+      text-align: center;
+    }
+
+    .title{
+      width: 300px;
+      margin: 0 0 0 10px;
+      float: left;
+      font-weight: normal;
+      font-size: 20px;
+      text-align: left;
+    }
+
+  }//.card
+
+  .message{
+    width: 500px;
+    padding: 0 0 20px;
+    margin: 0 auto;
+  }
+
+}//.chats_index
+
+
+
+
+
+
+.chats_show{
+  position: relative;
+
+  .hide{
+    display: none;
+  }
+
+  .get_contents{
+    margin: 70px 25% 140px;
+  }
+
+  .info_wrapper{
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: solid 1px #999;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .info{
+    width: 335px;
+    margin: 0 auto;
+  }
+
+  .category{
+    width: 35px;
+    height: 35px;
+    float: left;
+    border-radius: 100%;
+    background-color: #333;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .title{
+    width: 300px;
+    float: left;
+    padding: 6px 0 0 10px;
+    margin: 0;
+    font-weight: normal;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .chat_card{
+    margin: 30px 0;
+
+    .username{
+      color: #DF423D;
+    }
+
+    .own_chat{
+      margin: 0 0 60px 0;
+
+      .chat_avatar{
+        width: 35px;
+        height: 35px;
+        float: right;
+      }
+
+      .avatar{
+        width: 35px;
+        border-radius: 100%;
+      }
+
+      .chat_username{
+        width: 200px;
+        float: right;
+        margin: 5px 10px 0 0;
+        font-size: 14px;
+        color: #DF423D;
+        text-align: right;
+      }
+
+
+      .chat_message{
+        width: 400px;
+        margin: 0 45px 0 0;
+        float: right;
+        font-size: 16px;
+        text-align: right;
+      }
+
+    }//.own_chat
+
+    .another_chat{
+
+      .chat_avatar{
+        width: 35px;
+        height: 35px;
+        float: left;
+      }
+
+      .avatar{
+        width: 35px;
+        border-radius: 100%;
+      }
+
+      .chat_username{
+        width: 200px;
+        float: left;
+        margin: 5px 0 0 10px;
+        font-size: 14px;
+        color: #DF423D;
+      }
+
+      .chat_message{
+        margin: 0 0 0 45px;
+        font-size: 16px;
+      }
+
+    }//.another_chat
+
+  }//.chat_card
+
+  .form_area{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: solid 1px #999;
+  }
+
+  .form{
+    width: 800px;
+    height: 35px;
+    margin: 20px auto;
+  }
+
+  .field{
+    width: 750px;
+    height: 35px;
+    float: left;
+    padding: 2px 10px;
+    margin: 0 15px 0 0;
+    border-top: solid 1px #999;
+    border-right: solid 1px #999;
+    border-bottom: solid 1px #999;
+    border-left: solid 1px #999;
+    border-radius: 10px;
+  }
+
+  .submit{
+    width: 35px;
+    height: 35px;
+    float: left;
+    border-top: solid 1px #DF423D;
+    border-right: solid 1px #DF423D;
+    border-bottom: solid 1px #DF423D;
+    border-left: solid 1px #DF423D;
+    border-radius: 100%;
+    background-color: #fff;
+    color: #DF423D;
+
+    &:hover{
+      background-color: #DF423D;
+      color: #fff;
+    }
+  }
+
+}//.chats_show

@@ -117,4 +117,12 @@ class Contract < ActiveRecord::Base
   def number_of_question_review
     Contract.where(guest_user_id: contractable.user_id, contractable_type: :Question).count
   end
+
+  #注目しているcontractレコードの最新のchatsのレコードを取得する
+  def self.newest_chat_message(contract_id)
+    Chat.where(contract_id: contract_id).order("created_at DESC").limit(1).each do |chat|
+      return chat.message
+    end
+  end
+
 end
