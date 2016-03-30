@@ -32,7 +32,6 @@ class Contract < ActiveRecord::Base
     where(host_user_id: user_id, contractable_type: :Lecture).count
   end
 
-
   # 注目しているユーザーが回答した質問に対するレビューの平均値を1~5で取り出す
   def self.question_review_rate_avarage(user_id)
 
@@ -62,12 +61,6 @@ class Contract < ActiveRecord::Base
     where(guest_user_id: user_id, contractable_type: :Question).count
   end
 
-
-
-
-
-
-
 # 注目しているユーザーのlectureに対するレビューの平均値を1~5で取り出す
   def lecture_review_rate_avarage
 
@@ -95,7 +88,6 @@ class Contract < ActiveRecord::Base
   def number_of_lecture_review
     Contract.where(host_user_id: contractable.user_id, contractable_type: :Lecture).count
   end
-
 
   # 注目しているユーザーが回答した質問に対するレビューの平均値を1~5で取り出す
   def question_review_rate_avarage
@@ -126,17 +118,11 @@ class Contract < ActiveRecord::Base
     Contract.where(guest_user_id: contractable.user_id, contractable_type: :Question).count
   end
 
-
   #注目しているcontractレコードの最新のchatsのレコードを取得する
   def self.newest_chat_message(contract_id)
     Chat.where(contract_id: contract_id).order("created_at DESC").limit(1).each do |chat|
       return chat.message
     end
   end
-
-
-
-
-
 
 end

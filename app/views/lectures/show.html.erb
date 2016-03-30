@@ -1,60 +1,60 @@
-<div class="show_left_content col-md-8 clearfix">
-  <% if user_signed_in? && @lecture.user.id == current_user.id %>
-    <%= link_to "編集", edit_lecture_path %>
-    <%= link_to "削除", lecture_path, method: :delete %>
-  <% end %>
-  <h1><%= @lecture.title%></h1>
-  <p class="show_left_content"><%= @lecture.content%>
-  <div class="circle_list clearfix">
-    <div class="money">
-      <h2>謝礼</h2>
-        <div class="show_circle">
-          <span>¥  <%= @lecture.total_avarable_time%></span>
-        </div>
-    </div>
-
-    <div class="how_to">
-          <h2>対応方法</h2>
-      <ul class="clearfix">
-        <li>
-          <div class="show_circle">
-            <span>Skype</span>
-          </div>
-        </li>
-        <li>
-          <div class="show_circle">
-            <span class="glyphicon glyphicon-comment"><br>
-              チャット
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="col-md-4 clearfix">
-  <div class="user_content">
-    <% if @lecture.user.avatar? %>
-      <%= link_to image_tag(@lecture.user.avatar.url,  class: "user_avatar"), user_path(@lecture.user) %>
-    <% else %>
-      <%= link_to image_tag('no-image.png',  class: "user_avatar"), user_path(@lecture.user) %>
+<div class="container">
+  <div class="show_left_content col-md-8 clearfix">
+    <% if user_signed_in? && @lecture.user.id == current_user.id %>
+      <%= link_to "編集", edit_lecture_path %>
+      <%= link_to "削除", lecture_path, method: :delete %>
     <% end %>
-    <h2><%= @lecture.user.name %></h2>
-    <p>質問数</p>
-    <p>6</p>
-    <p>回答者からの評価</p>
-    <span class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "150/30" %></span>
+    <h1><%= @lecture.title%></h1>
+    <p class="show_left_content"><%= @lecture.content%>
+    <div class="circle_list clearfix">
+      <div class="money">
+        <h2>謝礼</h2>
+          <div class="show_circle">
+            <span>¥  <%= @lecture.total_avarable_time%></span>
+          </div>
+      </div>
+
+      <div class="how_to">
+            <h2>対応方法</h2>
+        <ul class="clearfix">
+          <li>
+            <div class="show_circle">
+              <span>Skype</span>
+            </div>
+          </li>
+          <li>
+            <div class="show_circle">
+              <span class="glyphicon glyphicon-comment"><br>
+                チャット
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
-<div class="contract col-md-4">
-  <% if user_signed_in? %>
-      <% if @lecture.user.id != current_user.id %>
-        <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture), class: "contract_circle" %>
-          <%= form_tag(action: :purchase, method: :post) do %>
-            <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+    <div class="user_content clearfix">
+      <% if @lecture.user.avatar? %>
+        <%= link_to image_tag(@lecture.user.avatar.url,  class: "user_avatar"), user_path(@lecture.user) %>
+      <% else %>
+        <%= link_to image_tag('no-image.png',  class: "user_avatar"), user_path(@lecture.user) %>
+      <% end %>
+      <h2><%= @lecture.user.name %></h2>
+      <p>質問数</p>
+      <p>6</p>
+      <p>回答者からの評価</p>
+      <span class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "150/30" %></span>
+    </div>
+  </div>
+  <div class="contract col-md-4">
+    <% if user_signed_in? %>
+        <% if @lecture.user.id != current_user.id %>
+          <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture), class: "contract_circle" %>
+            <%= form_tag(action: :purchase, method: :post) do %>
+              <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+            <% end %>
           <% end %>
-        <% end %>
-  <% else %>
-      <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture), class:"contract_circle" %>
-  <% end %>
+    <% else %>
+        <%= link_to "このレクチャーに申し込む", contract_lecture_path(@lecture), class:"contract_circle" %>
+    <% end %>
 </div>

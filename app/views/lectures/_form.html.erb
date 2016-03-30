@@ -1,0 +1,15 @@
+<%= form_for @lecture do |f| %>
+  タイトル：<%= f.text_field :title, placeholder: "Railsでお悩みの方" %></br>
+  内容：<%= f.text_field :content, placeholder: "Rails教えますよ" %></br>
+
+  <%= f.fields_for :skill_relations do |skill| %>
+    対象スキル：<%= skill.select :skill_id, Skill.all.map{|s| [s.skill_name, s.id]} %></br>
+    <% end %>
+
+  対応合計時間：<%= f.text_field :total_avarable_time, placeholder: "10" %><br>
+  料金：<%= f.text_field :charge, placeholder: "10,000" %></br>円
+  <%= f.hidden_field :skill_relationable_type, value: "Lecture" %>
+   <div class="field">
+  </div>
+  <%= f.submit "この内容でレクチャーを作成する"%>
+<% end %>
