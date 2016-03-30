@@ -95,18 +95,19 @@ $("html, body").animate({scrollTop: $(".bottom_pointer").offset().top}, "fast");
       var pusher_log = $(".pusher_log");
 
       if (<%= current_user.id %> == data.user_id ) {
-        $(".hide .own_chat_card .chat_username").text(data.username)
-        $(".hide .own_chat_card .chat_message").text(data.message)
-        var own = $(".own_chat_card").clone();
+        $(".hide .own_chat_card .chat_username:last").text(data.username)
+        $(".hide .own_chat_card .chat_message:last").text(data.message)
+        var own = $(".own_chat_card:last").clone();
         pusher_log.append(own);
       } else {
-        $(".hide .another_chat_card .chat_username").text(data.username)
-        $(".hide .another_chat_card .chat_message").text(data.message)
-        var another = $(".another_chat_card").clone();
+        $(".hide .another_chat_card .chat_username:last").text(data.username)
+        $(".hide .another_chat_card .chat_message:last").text(data.message)
+        var another = $(".another_chat_card:last").clone();
         pusher_log.append(another);
       };
 
       $("html, body").animate({scrollTop: $(".bottom_pointer").offset().top}, "fast");
+      #sendボタン押した時だけ反応するようにする
       document.getElementById('chat_message').value = "";
     };
 
