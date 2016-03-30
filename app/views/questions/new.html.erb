@@ -1,6 +1,27 @@
-<%= form_for @question do |f| %>
-  タイトル：<%= f.text_field :title, placeholder: "Railsで悩んでます" %></br>
-  内容：<%= f.text_field :content, placeholder: "Rails教えてください" %></br>
-  報酬：<%= f.text_field :reward, placeholder: "1,000" %></br>円
-  <%= f.submit "この内容で質問を作成する"%>
-<% end %>
+<div class="question_new">
+  <h2>質問作成</h2>
+    <div class="user_area clearfix">
+      <%= image_tag(current_user.avatar, class: :avatar) %>
+      <span><%= current_user.name %></span>
+    </div>
+  <%= form_for @question do |f| %>
+    <%= f.text_field :title, placeholder: "タイトルを入力して下さい", class: "new_content" %></br>
+    <%= f.text_area :content, placeholder: "詳しい説明をこちらに入力して下さい" %></br>
+    <div class="form-group col-md-6">
+    <%= f.fields_for :skill_relations do |skill| %>
+    <%= f.label :skill, '対応言語' %><br>
+      <%= skill.select :skill_id, Skill.all.map{|s| [s.skill_name, s.id]} %></br>
+      <% end %>
+    <%= f.hidden_field :skill_relationable_type, value: "question" %>
+    </div>
+    <div class="form-group col-md-6">
+    <%= f.label :reward, '受講料' %><br>
+    <%= f.select :reward, [["1000円", "10000"], ["2000円", "2000"], ["3000円", "3000"]] %>
+    </div>
+    <div class="col-md-12">
+      <div class="radius_box">
+        <%= f.submit "この内容で質問を作成する", class: "btn"%>
+      </div>
+    </div>
+  <% end %>
+</div>
