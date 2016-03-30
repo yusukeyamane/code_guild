@@ -41,3 +41,7 @@ group :development do
   gem 'did_you_mean'
   gem 'sidekiq', '~> 3.3.2'
 end
+
+group :production, :staging do
+    gem 'unicorn'
+end
