@@ -9,13 +9,13 @@
     <%= f.text_area :content, placeholder: "詳しい説明をこちらに入力して下さい" %></br>
     <div class="form-group col-md-6">
     <%= f.fields_for :skill_relations do |skill| %>
-    <%= f.label :skill, '対応言語' %><br>
+    <%= f.label :skill, '対応ジャンル' %><br>
       <%= skill.select :skill_id, Skill.all.map{|s| [s.skill_name, s.id]} %></br>
       <% end %>
     <%= f.hidden_field :skill_relationable_type, value: "question" %>
     </div>
     <div class="form-group col-md-6">
-    <%= f.label :reward, '受講料' %><br>
+    <%= f.label :reward, '謝礼' %><br>
     <%= f.select :reward, [["1000円", "10000"], ["2000円", "2000"], ["3000円", "3000"]] %>
     </div>
     <div class="col-md-12">
