@@ -93,7 +93,7 @@
     border: 1px solid #EAA09F;
 }
 
-.lecture_new {
+.lecture_new, .question_new {
   margin: 0 auto;
   width: 60%;
   h2 {
@@ -113,12 +113,13 @@
     margin-left: 2px;
     color: #DF423D;
   }
-  #lecture_title {
+  #lecture_title, #question_title {
     border: none;
     font-size: 20px;
     margin: 15px 0;
+    width: 100%;
   }
-  #lecture_content {
+  #lecture_content, #question_content {
     border: none;
     font-size: 14px;
     width: 100%;
