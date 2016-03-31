@@ -1,34 +1,33 @@
-<% unless question.contract %>
-    <div class="col-md-4">
-      <div class="card_box">
-        <div class="user_area clearfix">
-            <%= link_to image_tag(question.user.avatar.url,  class: "user_avatar"), user_path(question.user) %>
-          <ul>
-            <li>
-              <%= link_to "#{question.user.name}", user_path(question.user), class: "user_name" %>
-            </li>
-            <li>
-              <ul class="user_detail">
-                <li class="star"><%= image_tag "rate_stars_60px/rate_stars_5.png",  width: "100/20" %>
-                </li>
-                <li class="rate"><span>13</span></li>
-                <li class="skill"><span>R</span></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-          <%= link_to question_path(question) do %>
-            <div class="card_content">
-              <h1><%= question.title %></h1><br>
-              <ul class="box_list">
-                <li class="radius_box">
-                  <span><%= question.reward %>円</span>
-                </li>
-              </ul><br>
-              <p>対応方法 : Skype, チャット</p><br>
-              <span><%= question.content %></span>
-          <% end %>
-        </div>
+  <div class="card">
+
+    <div class="user_info clearfix">
+      <div class="avatar_side">
+        <%= link_to image_tag(question.user.avatar, class: :avatar), user_path(question.user) %>
+      </div>
+      <div class="name_side">
+        <%= link_to question.user.name, user_path(question.user), class: :name %><br>
+        <%= image_tag "rate_stars_60px/rate_stars_#{Contract.question_review_rate_avarage(question.user_id)}.png", class: :stars %>
+        <span class="rate_amount"><%= Contract.number_of_question_review(question.user_id) %></span>
       </div>
     </div>
-<% end %>
+
+    <hr>
+
+    <%= link_to question_path(question) do %>
+      <div class="card_contents">
+        <h1><%= question.title %></h1>
+        <ul class="box_lists clearfix">
+          <li class="radius_box left_r">
+            <span><%= question.timelimit %>時間 </span>
+          </li>
+          <li class="radius_box right_r">
+            <span><%= question.reward %>円</span>
+          </li>
+        </ul>
+        <p>対応方法 : Skype, チャット</p>
+        <hr>
+        <div class="text"><%= question.content %></div>
+      </div>
+    <% end %>
+
+  </div>

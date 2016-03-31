@@ -76,18 +76,18 @@ table {
   clear: both;
 }
 
-.wrapper {
-  // margin-top: 20px;
-}
+// .wrapper {
+//   // margin-top: 20px;
+// }
 
-.devise_links {
-  padding: 0 0 20px 20px;
-}
+// .devise_links {
+//   padding: 0 0 20px 20px;
+// }
 
-.card_wrapper {
-  margin-bottom: 20px;
-  height: 100%;
-}
+// .card_wrapper {
+//   margin-bottom: 20px;
+//   height: 100%;
+// }
 
 // lecture and question
 // .title {
@@ -107,140 +107,140 @@ table {
   color: #EAA09F;
 }
 
-.search {
-  text-align: center;
-  margin-bottom: 10px;
-  #lecture_search {
-    width: 50%;
-  }
-    .form-control {
-      width: 100%  !important;
-    }
-    .btn {
-      right: 2px;
-      border-top-right-radius: 2px !important;
-      border-bottom-right-radius: 2px !important;
-      color: #FFF;
-      background-color: #999;
-    }
-}
+// .search {
+//   text-align: center;
+//   margin-bottom: 10px;
+//   #lecture_search {
+//     width: 50%;
+//   }
+//     .form-control {
+//       width: 100%  !important;
+//     }
+//     .btn {
+//       right: 2px;
+//       border-top-right-radius: 2px !important;
+//       border-bottom-right-radius: 2px !important;
+//       color: #FFF;
+//       background-color: #999;
+//     }
+// }
 
-.search_title {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
+// .search_title {
+//   font-size: 14px;
+//   margin-bottom: 20px;
+// }
 
-.search_box {
-  width: 50%;
-}
+// .search_box {
+//   width: 50%;
+// }
 
 
-.card_box {
-  background-color: #EAA09F;
-  margin: 20px 10px;
-  padding-bottom: 10px;
-  transition: opacity .04s linear;
-  border-radius: 6px;
-    a {
-        text-decoration: none;
-      }
-  -webkit-box-shadow: 0 2px 3px 0 rgba(90,0,0,0.22);
-    .user_area {
-        padding: 10px 0 10px;
-        width: 90%;
-        margin: 0 auto 20px;
-        ul {
-          padding-top: 4px;
-          li {
-            padding-bottom: 6px;
-            .user_detail {
-              float: right;
-              width: -webkit-calc(100% - 72px);
-                  .star {
-                    float: left;
-                    display: inline;
-                    vertical-align: middle;
-                  }
-                  .rate {
-                    color: #FFF;
-                    display: inline;
-                    vertical-align: middle;
-                    padding-left: 3px;
-                  }
-                  .skill {
-                    background-color: gray;
-                    border-radius: 50%;
-                    width: 15px;
-                    display: inline;
-                    vertical-align: middle;
-                    float: right;
-                }
-              }
-            }
-          }
-        .user_avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            margin-right: 8px;
-            float: left;
-          }
-        .user_name {
-            font-size: 20px;
-            color: #FFF;
-            text-decoration: none;
-            vertical-align: top;
-            padding-left: 6px;
-          }
-      }
-    .card_content {
-        width: 90%;
-        background-color: #FFF;
-        padding: 10px;
-        margin: 0 auto 10px;
-        border-radius: 6px;
-      &:hover {
-        -webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.22);
-      }
-      h1 {
-          color: #DF423D;
-          font-size: 20px;
-          font-weight: bold;
-      }
-      h2 {
-          font-size: 12px;
-      }
-      p {
-          color: #EAA09F;
-          font-weight: bold;
-      }
-      span {
-        color: #000;
-      }
-    }
-  }
+// .card_box {
+//   background-color: #EAA09F;
+//   margin: 20px 10px;
+//   padding-bottom: 10px;
+//   transition: opacity .04s linear;
+//   border-radius: 6px;
+//     a {
+//         text-decoration: none;
+//       }
+//   -webkit-box-shadow: 0 2px 3px 0 rgba(90,0,0,0.22);
+//     .user_area {
+//         padding: 10px 0 10px;
+//         width: 90%;
+//         margin: 0 auto 20px;
+//         ul {
+//           padding-top: 4px;
+//           li {
+//             padding-bottom: 6px;
+//             .user_detail {
+//               float: right;
+//               width: -webkit-calc(100% - 72px);
+//                   .star {
+//                     float: left;
+//                     display: inline;
+//                     vertical-align: middle;
+//                   }
+//                   .rate {
+//                     color: #FFF;
+//                     display: inline;
+//                     vertical-align: middle;
+//                     padding-left: 3px;
+//                   }
+//                   .skill {
+//                     background-color: gray;
+//                     border-radius: 50%;
+//                     width: 15px;
+//                     display: inline;
+//                     vertical-align: middle;
+//                     float: right;
+//                 }
+//               }
+//             }
+//           }
+//         .user_avatar {
+//             width: 64px;
+//             height: 64px;
+//             border-radius: 50%;
+//             margin-right: 8px;
+//             float: left;
+//           }
+//         .user_name {
+//             font-size: 20px;
+//             color: #FFF;
+//             text-decoration: none;
+//             vertical-align: top;
+//             padding-left: 6px;
+//           }
+//       }
+//     .card_content {
+//         width: 90%;
+//         background-color: #FFF;
+//         padding: 10px;
+//         margin: 0 auto 10px;
+//         border-radius: 6px;
+//       &:hover {
+//         -webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.22);
+//       }
+//       h1 {
+//           color: #DF423D;
+//           font-size: 20px;
+//           font-weight: bold;
+//       }
+//       h2 {
+//           font-size: 12px;
+//       }
+//       p {
+//           color: #EAA09F;
+//           font-weight: bold;
+//       }
+//       span {
+//         color: #000;
+//       }
+//     }
+//   }
 
-.box_list {
-  display: table;
-  border-collapse: separate;
-  border-spacing: 8px 0;
-  width: 100%;
-  margin-bottom: 10px;
-  content: "";
-  margin-bottom: 10px;
-    .radius_box {
-      border-radius: 14px;
-      background-color: #DF423D;
-      display: table-cell;
-      vertical-align: middle;
-      height: 25px;
-      text-align: center;
-        span {
-          color: #FFF;
-          display: block-inline;
-        }
-  }
-}
+// .box_list {
+//   display: table;
+//   border-collapse: separate;
+//   border-spacing: 8px 0;
+//   width: 100%;
+//   margin-bottom: 10px;
+//   content: "";
+//   margin-bottom: 10px;
+//     .radius_box {
+//       border-radius: 14px;
+//       background-color: #DF423D;
+//       display: table-cell;
+//       vertical-align: middle;
+//       height: 25px;
+//       text-align: center;
+//         span {
+//           color: #FFF;
+//           display: block-inline;
+//         }
+//   }
+// }
 
 .menu_triangle {
   font: normal normal normal 1px/1 FontAwesome;

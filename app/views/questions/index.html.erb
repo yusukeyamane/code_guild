@@ -1,13 +1,10 @@
-<h1 class="title">誰かの「知りたい」に答えよう！</h1>
-<div class="search">
-  <h2 class="search_title">あなたが教えられる事は何ですか？</h2>
-    <%= form_tag('/questions/search', method: :get, class:"form-inline") do %>
-  <div style="display:none"></div>
-  <div class="input-group">
-    <span class="input-group-btn" id="lecture_search">
-      <input class="form-control" name="keyword" placeholder="質問を検索" type="text" value=""><button class="btn" title="検索" type="submit"><i class="glyphicon glyphicon-search"></i></button></input>
-    </span>
+<div class="contracts_index">
+  <h1>質問一覧</h1>
+
+  <div class="search_results">
+    <div class="results_box clearfix">
+      <%= render @questions %>
+    </div>
   </div>
-    <% end %>
+
 </div>
-<%= render @questions %>

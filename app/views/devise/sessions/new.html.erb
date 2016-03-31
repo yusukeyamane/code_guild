@@ -1,27 +1,27 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><%= t('.sign_in', :default => "Sign in") %></h4>
-  </div>
-  <div class="panel-body">
+<div class="devise_form_template">
+    <h3>ログイン画面</h3>
+  <div class="devise_forms">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      <div class="devise_form_box">
+        <%= f.email_field :email, placeholder: "登録メールアドレスを入力", autofocus: true, class: "devise_form" %>
       </div>
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <div class="devise_form_box">
+        <%= f.password_field :password, placeholder: "ログインパスワードを入力", autocomplete: "off", class: "devise_form" %>
       </div>
       <% if devise_mapping.rememberable? %>
-        <div class="checkbox">
+        <div class="devise_checkbox_box">
           <label>
-            <%= f.check_box :remember_me %>
+            <%= f.check_box :remember_me, class: "devise_checkbox" %>
             <%= f.label :remember_me %>
           </label>
         </div>
         <% end %>
-      <%= f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary" %>
+        <div class="devise_btn_box">
+      <%= f.submit  t('.sign_in', :default => "ログイン"), class: "devise_btn" %>
+    </div>
     <% end %>
   </div>
-  <%= render "devise/shared/links" %>
+  <div class="devise_links_box">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
