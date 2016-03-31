@@ -22,6 +22,12 @@ class ChatsController < ApplicationController
     @pusher_access_key = config_pusher['access_key']
   end
 
+  # def purchase
+  #   webpay = WebPay.new(WEBPAY_SECRET_KEY)
+  #   webpay.charge.create(currency: 'jpy', amount: Contract.find(params[:id]).contractable.charge, card: params['webpay-token'])
+  #   redirect_to controller: :contracts, action: :index, flash: { success: "支払いが完了しました！" }
+  # end
+
   def create
     @chat = Chat.new(chat_params)
     if @chat.save
