@@ -1,4 +1,4 @@
-<% unless params[:controller].include?("devise") %>
+<% if user_signed_in? %>
   <header class="header clearfix">
 
     <div id="hedder_navbar">
@@ -69,4 +69,53 @@
     </div><!-- #header_navbar -->
 
   </header>
+
+
+<% else %>
+
+
+  <header class="header clearfix">
+
+    <div id="hedder_navbar">
+
+       <div class="col-xs-1" id="navbar_left">
+          <%= link_to "Lectgram", root_path, id: "header_logo" %>
+        </div>
+
+        <div id="navbar_center">
+
+          <div id="centering_question_lecture_nav">
+
+            <div class="fade_trigger question_fade_trigger">
+              <span id="question_nav">質問  <span class="menu_triangle">▼</span></span>
+              <div class="fade_area" id="question_nav_menu">
+              <ul>
+                <li>
+                  <%= link_to "一覧を表示", questions_path, class: "cover_shadow" %>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+            <div class="fade_trigger lecture_fade_trigger">
+              <span id="lecture_nav">レクチャー  <span class="menu_triangle">▼</span></span>
+              <div class="fade_area" id="lecture_nav_menu">
+              <ul>
+                <li>
+                  <%= link_to "一覧表示", lectures_path, class: "cover_shadow" %>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+           <div class="col-xs-2" id="navbar_right">
+            <%= link_to "サインインする", new_user_registration_path %>
+          </div>
+
+    </div><!-- #header_navbar -->
+
 <% end %>
