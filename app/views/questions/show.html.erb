@@ -49,12 +49,8 @@
 <div class="contract col-md-4">
   <% if user_signed_in? %>
       <% if @question.user.id != current_user.id %>
-        <%= link_to "このレクチャーに申し込む", contract_question_path(@question), class: "contract_circle" %>
-          <%= form_tag(action: :purchase, method: :post) do %>
-            <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
-          <% end %>
-        <% end %>
-  <% else %>
-      <%= link_to "このレクチャーに申し込む", contract_question_path(@question), class:"contract_circle" %>
+        <%= link_to "この質問に答える", contract_question_path(@question), class: "contract_circle" %>
+      <% else %>
+        <%= link_to "この質問に答える", contract_question_path(@question), class:"contract_circle" %>
   <% end %>
 </div>
