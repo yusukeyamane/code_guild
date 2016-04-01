@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     end
     member do
       post :purchase
+      post :change_contrarct_situation
     end
   end
 
