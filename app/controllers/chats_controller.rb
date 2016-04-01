@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-
+  before_action :set_contract, only: [:show, :change_contrarct_situation]
   def index
     @contracts = Contract.where(host_user_id: current_user.id, situation: "doing")
     if Contract.where(guest_user_id: current_user.id ,situation: "doing").present?
