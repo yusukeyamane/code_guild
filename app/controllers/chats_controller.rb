@@ -12,7 +12,6 @@ class ChatsController < ApplicationController
   def show
     @chat = Chat.new
     @chats = Chat.where(contract_id: params[:id])
-    @contract = Contract.find(params[:id])
     if @contract.host_user_id == current_user.id
       @another_user = User.find(@contract.guest_user_id)
     else
@@ -48,16 +47,24 @@ class ChatsController < ApplicationController
   end
 
   def change_contrarct_situation
-    @contract = Contract.find(params[:id])
+    lecture_id = @contract.contractable_id
+    @reject_users = Contract.where { contractable_id.eq lecture_id }
     @contract.update(situation: "doing")
     redirect_to chat_path(@contract)
   end
 
   private
+
+  def set_contract
+    @contract = Contract.find(params[:id])
+  end
+
   def chat_params
     params.require(:chat).permit(:message, :contract_id).merge(user_id: current_user.id)
   end
+
   def create_params
     params..require(:chat).permit(:contract_id)
   end
+
 end
