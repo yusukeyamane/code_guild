@@ -47,6 +47,12 @@ class ChatsController < ApplicationController
     end
   end
 
+  def change_contrarct_situation
+    @contract = Contract.find(params[:id])
+    @contract.update(situation: "doing")
+    redirect_to chat_path(@contract)
+  end
+
   private
   def chat_params
     params.require(:chat).permit(:message, :contract_id).merge(user_id: current_user.id)
