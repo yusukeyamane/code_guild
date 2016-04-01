@@ -49,6 +49,7 @@ class ChatsController < ApplicationController
   def change_contrarct_situation
     lecture_id = @contract.contractable_id
     @reject_users = Contract.where { contractable_id.eq lecture_id }
+    @reject_users.update_all({ situation: "done" })
     @contract.update(situation: "doing")
     redirect_to chat_path(@contract)
   end
