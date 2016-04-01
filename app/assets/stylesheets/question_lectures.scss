@@ -74,12 +74,11 @@
   padding-top: 60px;
   .contract_circle {
     color: #DF423D;
-    border-radius: 20px;
+    border-radius: 50px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
-    color: #DF423D;
     margin: 0px auto 0 auto;
-    padding: 13px 13px;
+    padding: 10px 20px;
     border: 1px solid #DF423D;
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
@@ -88,9 +87,9 @@
 }
 
 .contract a:hover {
-    background-color: #EAA09F;
+    background-color: #DF423D;
     color: #FFF;
-    border: 1px solid #EAA09F;
+    border: 1px solid #DF423D;
 }
 
 .lecture_new, .question_new {
@@ -98,19 +97,21 @@
   width: 60%;
   h2 {
     text-align: center;
-    margin-top: 30px;
-    font-size: 30px;
+    margin: 30px 0 15px;
+    font-weight: normal;
+    font-size: 26px;
     color: #333;
   }
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
   }
   span {
     position: relative;
-    bottom: 30px;
+    bottom: 13px;
     margin-left: 2px;
+    font-size: 14px;
     color: #DF423D;
   }
   #lecture_title, #question_title {
@@ -123,7 +124,7 @@
     border: none;
     font-size: 14px;
     width: 100%;
-    height: 50%;
+    height: 200px;
   }
   .btn {
   background-color: #DF423D;

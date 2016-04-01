@@ -1,0 +1,71 @@
+.devise_form_template{
+
+  h3{
+    font-weight: normal;
+    font-size: 22px;
+    text-align: center;
+    margin: 30px 0 45px;
+  }
+
+  .devise_form_box{
+    width: 600px;
+    margin: 30px auto;
+  }
+
+  .devise_form{
+    width: 600px;
+    border-style: none;
+    text-align: center;
+  }
+
+  .devise_btn_box{
+    width: 110px;
+    margin: 45px auto 10px;
+  }
+
+  .devise_btn{
+    padding: 7px 25px;
+    border-top: solid 1px #DF423D;
+    border-right: solid 1px #DF423D;
+    border-bottom: solid 1px #DF423D;
+    border-left: solid 1px #DF423D;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #DF423D;
+    text-align: center;
+
+    &:hover{
+      color: #fff;
+      background-color: #DF423D;
+    }
+  }// devise_btn
+
+  .devise_link_sign_in{
+
+  }
+
+  .devise_checkbox_box{
+    position: relative;
+    top: -10px;
+    width: 180px;
+    margin: 0 auto;
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  .devise_checkbox{
+
+  }
+
+  .devise_links_box{
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .devise_link_box{
+    margin: 15px 0;
+  }
+
+
+}//devise_form_template
