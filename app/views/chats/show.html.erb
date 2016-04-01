@@ -2,6 +2,16 @@
 
     <div class="info_wrapper">
       <div class="info clearfix">
+      <% if button_should_appeared? %>
+          <div class="btn">
+            <%= link_to 'この申請を許可する', change_contrarct_situation_chat_path(@contract), method: :post %>
+          </div>
+        <% if false %>
+          <%= form_tag(action: :purchase, method: :post) do %>
+            <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+          <% end %>
+        <% end %>
+      <% end %>
 
         <% if @contract.contractable_type == "Lecture" %>
           <%= link_to lecture_path(@contract.contractable.id) do %>

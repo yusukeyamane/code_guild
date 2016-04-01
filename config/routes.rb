@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
     member do
       get :contract
-      post :purchase
     end
   end
 
@@ -37,6 +36,10 @@ Rails.application.routes.draw do
   resources :chats, only: [:index, :show, :create] do
     collection do
       post :search
+    end
+    member do
+      post :purchase
+      post :change_contrarct_situation
     end
   end
 

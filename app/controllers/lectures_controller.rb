@@ -48,11 +48,10 @@ class LecturesController < ApplicationController
 
   def contract
     if Contract.where(contractable_id: params[:id]).where(contractable_type: :Lecture).blank?
-      contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id, answerd_user_id: @lecture.user.id, asked_user_id: current_user.id)
+      contract = Contract.new(contractable_id: params[:id], contractable_type: :Lecture, host_user_id: @lecture.user.id, guest_user_id: current_user.id, answerd_user_id: @lecture.user.id, asked_user_id: current_user.id, situation: "will_do")
 
       if contract.save
-        ContractMailer.lecure_contract_notificate(contract).deliver_now
-        redirect_to controller: :contracts, action: :index
+        redirect_to chat_path(contract)
       else
         render :show
       end
@@ -60,12 +59,6 @@ class LecturesController < ApplicationController
     else
       redirect_to action: :index, notice: "Sorry...この質問はすでに対応されています。"
     end
-  end
-
-  def purchase
-    webpay = WebPay.new(WEBPAY_SECRET_KEY)
-    webpay.charge.create(currency: 'jpy', amount: @lecture.charge, card: params['webpay-token'])
-    redirect_to controller: :contracts, action: :index, flash: { success: "支払いが完了しました！" }
   end
 
   private
